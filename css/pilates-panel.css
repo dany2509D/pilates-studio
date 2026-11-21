@@ -1,0 +1,207 @@
+/* ==========================================================
+   Tema Pilates en el panel de gestión: el mismo panel oscuro con la paleta Pilates (una sola salvia #89c1a5
+   sobre grafito) y las tipografías del tema. Se activa con <html data-tema="pilates"> (js/tema.js).
+   ========================================================== */
+html[data-tema="pilates"] {
+  --rojo: #4b8a6e;
+  --rojo-vivo: #89c1a5;
+  --rojo-oscuro: #2f6b52;
+  --amarillo: #b5cde8;
+  --amarillo-oscuro: #89c1a5;
+  --hazard: linear-gradient(#89c1a5, #89c1a5);
+  --titulos: 'SF Pro Display', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --texto: 'SF Pro Text', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+html[data-tema="pilates"] body { letter-spacing: -0.023em; }
+html[data-tema="pilates"] .hazard { height: 1px !important; background: rgba(243, 235, 232, 0.3) !important; }
+html[data-tema="pilates"] .cabecera::before, html[data-tema="pilates"] .hero::after, html[data-tema="pilates"] .comprobante::before, html[data-tema="pilates"] .modal-caja::before { height: 2px; opacity: 0.8; }
+html[data-tema="pilates"] h1, html[data-tema="pilates"] h2, html[data-tema="pilates"] h3 { font-weight: 600; text-transform: none; letter-spacing: -0.009em;  }
+html[data-tema="pilates"] .btn { border-radius: 980px; font-family: var(--texto); font-weight: 400; letter-spacing: -0.023em; text-transform: none; box-shadow: none; }
+html[data-tema="pilates"] .btn-amarillo, html[data-tema="pilates"] .btn-rojo { background: #89c1a5; color: #1f2a24; border-color: #89c1a5; }
+html[data-tema="pilates"] .btn-amarillo:hover, html[data-tema="pilates"] .btn-rojo:hover { background: #a4d1b9; }
+html[data-tema="pilates"] .tema-btn { font-family: var(--texto); font-weight: 600; }
+html[data-tema="pilates"] .insignia, html[data-tema="pilates"] .chip { font-family: var(--texto); }
+/* Tema Pilates en el panel: mismo panel oscuro con la paleta Pilates. */
+
+/* ----- css/admin.css ----- */
+html[data-tema="pilates"] body.admin {
+  background: radial-gradient(900px 480px at 85% -10%, rgba(123, 184, 156, 0.2), transparent 70%),
+    radial-gradient(700px 400px at -10% 30%, rgba(105, 174, 142, 0.05), transparent 70%),
+    var(--fondo);
+}
+html[data-tema="pilates"] .login {
+  background: radial-gradient(700px 420px at 50% 0%, rgba(123, 184, 156, 0.55), transparent 70%),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0 2px, transparent 2px 14px),
+    var(--negro);
+}
+html[data-tema="pilates"] .login-caja img {
+  box-shadow: 0 0 0 4px #111, 0 0 0 6px var(--amarillo), 0 14px 40px rgba(123, 184, 156, 0.5);
+}
+html[data-tema="pilates"] .cabecera::after {
+  background: radial-gradient(circle, rgba(123, 184, 156, 0.35), transparent 70%);
+}
+html[data-tema="pilates"] .inferior .nav-ind {
+  background: linear-gradient(160deg, #7db99d, #4b8c6e);
+  box-shadow: 0 8px 20px -4px rgba(123, 184, 156, 0.7);
+}
+@media (min-width: 900px) {
+html[data-tema="pilates"] .lateral::before {
+  background: radial-gradient(circle, rgba(123, 184, 156, 0.32), transparent 70%);
+}
+html[data-tema="pilates"] .lateral .nav-ind {
+  background: linear-gradient(90deg, rgba(123, 184, 156, 0.95), rgba(75, 140, 110, 0.55));
+  box-shadow: inset 4px 0 0 var(--amarillo), 0 10px 26px -10px rgba(123, 184, 156, 0.8);
+}
+}
+html[data-tema="pilates"] .hero {
+  background: radial-gradient(500px 240px at 100% 0%, rgba(105, 174, 142, 0.22), transparent 70%), linear-gradient(120deg, #7bb89c 0%, #3f755c 60%, #264637 100%);
+  box-shadow: 0 24px 50px -22px rgba(123, 184, 156, 0.8), 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+}
+html[data-tema="pilates"] .panel h2::before {
+  background: linear-gradient(var(--amarillo), #458065);
+}
+html[data-tema="pilates"] .sesion-usuario .avatar {
+  background: linear-gradient(145deg, var(--amarillo), #458065);
+  color: #244234;
+}
+html[data-tema="pilates"] .sesion-usuario[data-rol="recepcion"] .avatar {
+  background: linear-gradient(145deg, #7db99d, #4b8c6e);
+}
+html[data-tema="pilates"] .chip.sel {
+  color: #244234;
+  box-shadow: 0 8px 22px -8px rgba(105, 174, 142, 0.7);
+}
+html[data-tema="pilates"] input:focus, html[data-tema="pilates"] select:focus, html[data-tema="pilates"] textarea:focus {
+  box-shadow: 0 0 0 4px rgba(105, 174, 142, 0.25);
+}
+html[data-tema="pilates"] .btn-rojo {
+  background: linear-gradient(180deg, #7db99d, #59a581);
+  box-shadow: 0 8px 22px -8px rgba(123, 184, 156, 0.9), 0 1px 0 rgba(255, 255, 255, .25) inset;
+}
+html[data-tema="pilates"] .btn-rojo:hover {
+  background: linear-gradient(180deg, #95c6af, #4b8c6e);
+}
+html[data-tema="pilates"] .opcion.elegida {
+  background: linear-gradient(160deg, #244234, #244234);
+  box-shadow: 0 0 0 1px var(--amarillo), 0 14px 30px -12px rgba(105, 174, 142, 0.55);
+}
+html[data-tema="pilates"] .paso {
+  box-shadow: 0 0 0 3px rgba(123, 184, 156, 0.3);
+}
+html[data-tema="pilates"] .producto .cant {
+  box-shadow: 0 4px 12px rgba(123, 184, 156, 0.6);
+}
+html[data-tema="pilates"] .escaner-marco i {
+  filter: drop-shadow(0 0 6px rgba(105, 174, 142, 0.55));
+}
+html[data-tema="pilates"] .escaner-marco b {
+  background: linear-gradient(90deg, transparent, var(--rojo-vivo) 20%, #95c6af 50%, var(--rojo-vivo) 80%, transparent) top / 100% 3px no-repeat;
+}
+html[data-tema="pilates"] .modal-icono {
+  background: rgba(105, 174, 142, 0.12);
+}
+html[data-tema="pilates"] .etq {
+  background: rgba(105, 174, 142, 0.1);
+  color: #95c6af;
+}
+html[data-tema="pilates"] .insignia.nota-llamada {
+  color: #95c6af;
+  background: rgba(131, 188, 162, 0.12);
+}
+html[data-tema="pilates"] .aviso-contacto {
+  background: rgba(105, 174, 142, 0.08);
+}
+html[data-tema="pilates"] .contactar-lista a:hover {
+  background: rgba(105, 174, 142, 0.08);
+}
+html[data-tema="pilates"] .contactar-lista b {
+  color: #244234;
+}
+html[data-tema="pilates"] .der-tipo {
+  color: #95c6af;
+}
+html[data-tema="pilates"] .insignia.pase {
+  color: #95c6af;
+  background: rgba(131, 188, 162, 0.12);
+}
+html[data-tema="pilates"] .pase-diario {
+  border: 1px solid rgba(149, 198, 175, 0.35);
+}
+html[data-tema="pilates"] .pase-diario h3 {
+  color: #95c6af;
+}
+html[data-tema="pilates"] .c-cobro.c-nuevo {
+  background: rgba(105, 174, 142, 0.08);
+}
+html[data-tema="pilates"] .c-etiqueta-nuevo {
+  color: #244234;
+}
+
+/* ----- css/checkin.css ----- */
+html[data-tema="pilates"] .r-marca {
+  color: #95c6af;
+  background: rgba(105, 174, 142, 0.14);
+  border: 1px solid rgba(105, 174, 142, 0.45);
+}
+
+/* ----- css/ajustes.css ----- */
+html[data-tema="pilates"] .aj-pestana[aria-selected="true"] {
+  color: #244234;
+  box-shadow: 0 8px 22px -10px rgba(105, 174, 142, 0.8);
+}
+html[data-tema="pilates"] .aj-archivo input[type="file"]::file-selector-button {
+  color: #244234;
+}
+html[data-tema="pilates"] .aj-archivo input[type="file"]:hover::file-selector-button {
+  background: #95c6af;
+}
+html[data-tema="pilates"] .insignia.aj-g-socios {
+  color: #95c6af;
+  background: rgba(131, 188, 162, 0.12);
+}
+html[data-tema="pilates"] .insignia.aj-g-ajustes {
+  color: #95c6af;
+  background: rgba(105, 174, 142, 0.12);
+}
+html[data-tema="pilates"] .insignia.aj-g-datos {
+  background: rgba(149, 198, 175, 0.14);
+}
+
+/* ----- css/tour.css ----- */
+html[data-tema="pilates"] .tour-foco {
+  outline: 3px solid #69ae8e;
+}
+html[data-tema="pilates"] .tour-onda {
+  border: 3px solid #69ae8e;
+}
+html[data-tema="pilates"] .tour-burbuja {
+  border-top: 8px solid #69ae8e;
+}
+html[data-tema="pilates"] .tour-nivel {
+  color: #69ae8e;
+}
+html[data-tema="pilates"] .tour-estrellas svg {
+  fill: #69ae8e;
+}
+html[data-tema="pilates"] .tour-barra i {
+  background: #69ae8e;
+}
+html[data-tema="pilates"] .tour-grandes svg {
+  fill: #69ae8e;
+}
+html[data-tema="pilates"] .tour-fab {
+  background: #69ae8e;
+}
+html[data-tema="pilates"] .tour-fab:hover {
+  background: #95c6af;
+}
+html[data-tema="pilates"] .tour-raiz[data-tactil="1"][data-modo="jugar"] .tour-cursor::before {
+  background: rgba(105, 174, 142, 0.35);
+  border: 3px solid #69ae8e;
+}
+
+html[data-tema="pilates"] .kpi .valor { font-size: clamp(1.9rem, 2.3vw, 2.5rem); white-space: nowrap; }
+html[data-tema="pilates"] .lateral-marca span, html[data-tema="pilates"] .cabecera h1, html[data-tema="pilates"] .hero h2 { text-transform: none; letter-spacing: normal; }
+html[data-tema="pilates"] .lateral-marca span { font-size: 1.4rem; }
+html[data-tema="pilates"] .tour-fab, html[data-tema="pilates"] .nav-item, html[data-tema="pilates"] .kpi .rotulo { text-transform: none; letter-spacing: -0.02em; font-family: var(--texto); }
+html[data-tema="pilates"] .kpi .rotulo { text-transform: uppercase; font-weight: 600; font-size: 0.74rem; }

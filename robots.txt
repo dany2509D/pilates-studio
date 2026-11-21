@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# El panel (admin.html) y "Mi plan" (socio.html) llevan <meta name="robots" content="noindex">.
+# No se bloquean aquí para que los buscadores puedan leer ese noindex.
+
+Sitemap: https://tu-dominio.com/sitemap.xml

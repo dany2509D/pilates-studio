@@ -1,0 +1,62 @@
+/* ===== Animaciones al hacer scroll (web pública) =====
+   Las dispara js/animaciones.js con data-anim="…" sobre elementos .revelar. Todo está bajo .anim, que solo se
+   activa si la persona no pidió «reducir movimiento». Tema Gym: entradas rápidas y con empuje.
+   Tema Pilates: más lentas y suaves, con un poco de desenfoque. */
+
+/* --- Entradas --- */
+@keyframes in-izq { from { opacity: 0; transform: translateX(-38px); } }
+@keyframes in-der { from { opacity: 0; transform: translateX(38px); } }
+@keyframes in-subir { from { opacity: 0; transform: translateY(26px); } }
+@keyframes in-pop { from { opacity: 0; transform: translateY(40px) scale(0.93); } }
+@keyframes in-titulo { from { opacity: 0; transform: translateY(46px) skewY(2.5deg); } }
+@keyframes in-clip-izq { from { opacity: 0; clip-path: inset(0 100% 0 0 round 24px); transform: scale(0.96); } to { clip-path: inset(0 0 0 0 round 24px); } }
+@keyframes in-clip-der { from { opacity: 0; clip-path: inset(0 0 0 100% round 24px); transform: scale(0.96); } to { clip-path: inset(0 0 0 0 round 24px); } }
+
+.anim .revelar[data-anim="izq"].visible { animation-name: in-izq; }
+.anim .revelar[data-anim="der"].visible { animation-name: in-der; }
+.anim .revelar[data-anim="subir"].visible { animation-name: in-subir; }
+.anim .revelar[data-anim="pop"].visible { animation-name: in-pop; animation-duration: 0.85s; }
+.anim .revelar[data-anim="titulo"].visible { animation-name: in-titulo; animation-duration: 0.9s; }
+.anim .revelar[data-anim="clip"][data-lado="izq"].visible { animation-name: in-clip-izq; animation-duration: 1s; }
+.anim .revelar[data-anim="clip"][data-lado="der"].visible { animation-name: in-clip-der; animation-duration: 1s; }
+
+/* Pilates: más suave y lento, con desenfoque que se aclara */
+@keyframes in-suave { from { opacity: 0; transform: translateY(22px); filter: blur(8px); } }
+@keyframes in-suave-izq { from { opacity: 0; transform: translateX(-24px); filter: blur(6px); } }
+@keyframes in-suave-der { from { opacity: 0; transform: translateX(24px); filter: blur(6px); } }
+@keyframes in-suave-pop { from { opacity: 0; transform: translateY(26px) scale(0.97); filter: blur(6px); } }
+html[data-tema="pilates"] .anim .revelar.visible { animation-duration: 1s; animation-timing-function: cubic-bezier(0.22, 0.8, 0.3, 1); }
+html[data-tema="pilates"] .anim .revelar[data-anim="titulo"].visible, html[data-tema="pilates"] .anim .revelar[data-anim="subir"].visible { animation-name: in-suave; }
+html[data-tema="pilates"] .anim .revelar[data-anim="izq"].visible { animation-name: in-suave-izq; }
+html[data-tema="pilates"] .anim .revelar[data-anim="der"].visible { animation-name: in-suave-der; }
+html[data-tema="pilates"] .anim .revelar[data-anim="pop"].visible { animation-name: in-suave-pop; animation-duration: 1.05s; }
+
+/* --- Portada: al bajar, el texto sube y se desvanece; el video se acerca un poco --- */
+.portada-texto { transform: translate3d(0, calc(var(--hp, 0) * 64px), 0); opacity: calc(1 - var(--hp, 0) * 1.15); will-change: transform, opacity; }
+.portada-video { transform: scale(calc(1 + var(--hp, 0) * 0.07)); }
+
+/* --- Fotos de la galería: parallax interno --- */
+.foto img { scale: 1.14; translate: 0 calc(var(--fp, 0) * -16px); }
+.foto:hover img { scale: 1.2; }
+.num-grande { translate: 0 calc(var(--fp, 0) * 46px); }
+
+/* --- Barra superior que se esconde al bajar --- */
+.barra { transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+.barra.oculta:not(:focus-within) { transform: translateY(-110%); }
+
+/* --- Barra de progreso del scroll también en Pilates --- */
+html[data-tema="pilates"] .progreso-scroll { display: block !important; height: 3px; background: linear-gradient(90deg, var(--relleno), var(--azul)); box-shadow: none; }
+
+/* --- Preguntas frecuentes: la respuesta entra suave al abrir --- */
+@keyframes faq-in { from { opacity: 0; transform: translateY(-8px); } }
+.faq-lista details[open] > p { animation: faq-in 0.4s ease; }
+
+/* --- Sin movimiento: se quita todo lo que se mueve con el scroll --- */
+@media (prefers-reduced-motion: reduce) {
+  .portada-texto { transform: none; opacity: 1; }
+  .portada-video { transform: none; }
+  .foto img, .foto:hover img { scale: 1; translate: none; }
+  .num-grande { translate: none; }
+  .barra.oculta { transform: none; }
+  .faq-lista details[open] > p { animation: none; }
+}

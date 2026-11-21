@@ -1,0 +1,1227 @@
+/* ==========================================================
+   Tema Pilates · suave y minimalista
+   Se activa con <html data-tema="pilates"> (js/tema.js). Va después de base, site y efectos.
+   Paleta: rosa pálido #f3ebe8 (página), azul #b5cde8, menta #cee5ce, verde salvia #89c1a5 y gris cálido #696966.
+   Tipografía: familia SF Pro (si el dispositivo la tiene) o Inter. Titulares en 600 con interletrado negativo; texto en 400 a 17px.
+   Formas: botones 40px, tarjetas 24px, campos y etiquetas en píldora.
+   ========================================================== */
+html[data-tema="pilates"] {
+  --negro: #f3ebe8;
+  --carbon: #fbf7f5;
+  --gris: #4a4c48;
+  --gris-medio: #696966;
+  --blanco: #2e302c;
+  --rojo: #2f6b52;
+  --rojo-vivo: #89c1a5;
+  --rojo-oscuro: #1f4d3a;
+  --amarillo: #89c1a5;
+  --amarillo-oscuro: #6fb08f;
+  --peligro: #b3261e;
+  --hazard: linear-gradient(#89c1a5, #89c1a5);
+  --radio: 24px;
+  --sombra: rgba(46, 48, 44, 0.1) 12px 32px 80px 0;
+  --titulos: 'SF Pro Display', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --texto: 'SF Pro Text', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --mono: 'SF Pro Text', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --pergamino: #f3ebe8;
+  --papel: #fbf7f5;
+  --menta: #cee5ce;
+  --menta-suave: #e5f0e4;
+  --azul: #b5cde8;
+  --azul-suave: #e4ebf5;
+  --taupe: #ddd0cc;
+  --tinta: #2e302c;
+  --grafito: #696966;
+  --ceniza: #8e918b;
+  --sello: #2f6b52;
+  --relleno: #89c1a5;
+  --relleno-osc: #6fb08f;
+  color-scheme: light;
+}
+
+/* Tema Pilates (claro y minimalista): colores derivados del tema Gym. */
+
+/* ----- css/base.css ----- */
+html[data-tema="pilates"] .btn-amarillo {
+  color: #2e302c;
+  box-shadow: 0 8px 22px rgba(76, 141, 111, 0.112);
+}
+html[data-tema="pilates"] .btn-amarillo:hover {
+  background: #59a682;
+}
+html[data-tema="pilates"] .tema-btn {
+  border: 1px solid rgba(46, 48, 44, 0.35);
+  background: rgba(46, 48, 44, 0.08);
+  color: #2e302c;
+}
+html[data-tema="pilates"] .tema-btn:hover {
+  background: rgba(46, 48, 44, 0.18);
+}
+
+/* ----- css/site.css ----- */
+html[data-tema="pilates"] :focus-visible {
+  outline: 3px solid #2e302c;
+  box-shadow: 0 0 0 6px rgba(60, 48, 36, 0.154);
+}
+html[data-tema="pilates"] .btn-amarillo:focus-visible, html[data-tema="pilates"] .horarios-seccion :focus-visible {
+  outline-color: #e6dfdb;
+  box-shadow: 0 0 0 6px rgba(60, 48, 36, 0.168);
+}
+html[data-tema="pilates"] .btn-rojo:hover {
+  box-shadow: 0 8px 22px rgba(85, 157, 123, 0.16);
+}
+html[data-tema="pilates"] .btn-amarillo:hover {
+  box-shadow: 0 12px 28px rgba(76, 141, 111, 0.152);
+}
+html[data-tema="pilates"] .kicker span {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .seccion-sub {
+  color: #646360;
+}
+html[data-tema="pilates"] .barra {
+  background: rgba(233, 225, 222, 0.94);
+  border-bottom: 1px solid #d6cfcc;
+}
+html[data-tema="pilates"] .barra-flotante.solida, html[data-tema="pilates"] .barra-flotante.menu-abierto {
+  background: rgba(233, 225, 222, 0.95);
+  border-bottom-color: #d6cfcc;
+}
+html[data-tema="pilates"] .menu-movil {
+  background: #e6dfdb;
+  border-bottom: 1px solid #d6cfcc;
+}
+html[data-tema="pilates"] .menu-movil a {
+  border-top: 1px solid #d6cfcc;
+}
+html[data-tema="pilates"] .portada {
+  background: #e9e1de;
+}
+html[data-tema="pilates"] .portada::before {
+  background: radial-gradient(900px 560px at 88% 30%, rgba(85, 157, 123, 0.35), transparent 62%),
+    linear-gradient(100deg, rgba(233, 225, 222, 0.97) 0%, rgba(233, 225, 222, 0.8) 48%, rgba(222, 234, 228, 0.385) 100%);
+}
+html[data-tema="pilates"] .portada-marca {
+  -webkit-text-stroke: 2px rgba(46, 48, 44, 0.07);
+}
+html[data-tema="pilates"] .portada h1 {
+  text-shadow: 0 4px 30px rgba(60, 48, 36, 0.126);
+}
+html[data-tema="pilates"] .portada-bajada {
+  color: #4f504c;
+}
+html[data-tema="pilates"] .cifras span {
+  color: #5c5b57;
+}
+html[data-tema="pilates"] .logo-grande {
+  box-shadow: 0 0 0 7px var(--rojo-vivo), 0 30px 90px rgba(85, 157, 123, 0.2);
+}
+html[data-tema="pilates"] .marquee {
+  border-block: 3px solid #f3ebe8;
+}
+html[data-tema="pilates"] .planes {
+  background: radial-gradient(760px 420px at 100% 0%, rgba(85, 157, 123, 0.14), transparent 62%), #e9e1de;
+}
+html[data-tema="pilates"] .plan {
+  border: 1px solid #d2cbc8;
+  background: linear-gradient(180deg, #ddd6d3, #e4dcd9);
+}
+html[data-tema="pilates"] .plan::before {
+  background: #d2cbc8;
+}
+@media (hover: hover) {
+html[data-tema="pilates"] .plan:hover {
+  box-shadow: 0 26px 54px rgba(60, 48, 36, 0.154);
+}
+}
+html[data-tema="pilates"] .plan h3 {
+  color: #686763;
+}
+html[data-tema="pilates"] .plan .duracion {
+  color: #646360;
+}
+html[data-tema="pilates"] .plan .btn-gris {
+  border-color: #bab5b1;
+}
+html[data-tema="pilates"] .plan:hover .btn-gris {
+  color: #e6dfdb;
+}
+html[data-tema="pilates"] .plan.destacado {
+  background: linear-gradient(160deg, #559d7b, #447e63);
+  border-color: #59a682;
+  box-shadow: 0 26px 64px rgba(85, 157, 123, 0.18), 0 0 0 2px rgba(76, 141, 111, 0.22);
+}
+html[data-tema="pilates"] .plan.destacado .precio {
+  text-shadow: 0 3px 0 rgba(60, 48, 36, 0.07);
+}
+html[data-tema="pilates"] .plan.destacado h3, html[data-tema="pilates"] .plan.destacado .duracion {
+  color: rgba(46, 48, 44, 0.92);
+}
+html[data-tema="pilates"] .plan.destacado .btn-gris, html[data-tema="pilates"] .plan.destacado:hover .btn-gris {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .plan .cinta {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .pagos .chip {
+  border: 2px solid #bab5b1;
+}
+html[data-tema="pilates"] .inscribirse {
+  background: linear-gradient(135deg, #457f64 0%, #deeae4 100%);
+}
+html[data-tema="pilates"] .inscribirse::before {
+  background: repeating-linear-gradient(115deg, transparent 0 60px, rgba(243, 235, 232, 0.09) 60px 62px);
+}
+html[data-tema="pilates"] .marca-agua {
+  -webkit-text-stroke: 2px rgba(46, 48, 44, 0.09);
+}
+html[data-tema="pilates"] .inscribirse .seccion-sub {
+  color: rgba(46, 48, 44, 0.9);
+}
+html[data-tema="pilates"] .paso-num {
+  color: #2e302c;
+  box-shadow: 0 0 0 6px rgba(76, 141, 111, 0.1);
+}
+html[data-tema="pilates"] .pasos small {
+  color: rgba(46, 48, 44, 0.8);
+}
+html[data-tema="pilates"] .garantias {
+  border-top: 1px solid rgba(46, 48, 44, 0.25);
+  color: #2e302c;
+}
+html[data-tema="pilates"] .inscripcion-pro {
+  background: #e5dedb;
+  border: 1px solid #d3ccc9;
+  box-shadow: 0 34px 80px rgba(60, 48, 36, 0.154);
+}
+html[data-tema="pilates"] .plan-opcion-caja {
+  border: 2px solid #cbc5c2;
+  background: #ddd6d3;
+}
+html[data-tema="pilates"] .plan-opcion:hover .plan-opcion-caja {
+  border-color: #a4a09d;
+}
+html[data-tema="pilates"] .plan-opcion input:checked + .plan-opcion-caja {
+  background: #e5eee9;
+  box-shadow: 0 0 0 4px rgba(76, 141, 111, 0.08);
+}
+html[data-tema="pilates"] .plan-opcion input:focus-visible + .plan-opcion-caja {
+  outline: 3px solid #2e302c;
+}
+html[data-tema="pilates"] input:focus, html[data-tema="pilates"] select:focus {
+  box-shadow: 0 0 0 4px rgba(76, 141, 111, 0.1);
+}
+html[data-tema="pilates"] .campo-caja input {
+  background: #d8d1ce;
+  border: 2px solid #c9c3c0;
+}
+html[data-tema="pilates"] .campo-caja input::placeholder {
+  color: #888682;
+}
+html[data-tema="pilates"] .campo-caja input:focus {
+  box-shadow: 0 0 0 4px rgba(76, 141, 111, 0.08);
+}
+html[data-tema="pilates"] .form-nota {
+  color: #686763;
+}
+html[data-tema="pilates"] .casilla input:focus-visible {
+  outline: 3px solid #2e302c;
+}
+html[data-tema="pilates"] .yappy-caja {
+  background: #e5dedb;
+  box-shadow: 0 20px 50px rgba(60, 48, 36, 0.112);
+}
+html[data-tema="pilates"] .yappy-caja ol {
+  color: #494a46;
+}
+html[data-tema="pilates"] #beneficios {
+  background: linear-gradient(180deg, #e9e1de, #e4ddda 60%, #ebe4e1);
+}
+html[data-tema="pilates"] .beneficio {
+  background: #e3dcd9;
+  border: 1px solid #d6cfcc;
+}
+html[data-tema="pilates"] .beneficio::after {
+  -webkit-text-stroke: 1.5px #cbc5c2;
+}
+html[data-tema="pilates"] .beneficio svg {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .beneficio p {
+  color: #646360;
+}
+html[data-tema="pilates"] .galeria {
+  background: #ebe4e1;
+}
+html[data-tema="pilates"] .foto {
+  background: #e2dbd8;
+}
+html[data-tema="pilates"] .foto figcaption {
+  background: linear-gradient(transparent, rgba(243, 235, 232, 0.88));
+}
+html[data-tema="pilates"] .foto.vacia {
+  border: 1px solid #d3ccc9;
+  background: url('../assets/logo.png') center / 38% no-repeat, radial-gradient(circle at 30% 20%, #e3ede8, #e5dedb 70%);
+  color: #686763;
+}
+html[data-tema="pilates"] .foto.vacia::before {
+  background: rgba(233, 225, 222, 0.82);
+}
+html[data-tema="pilates"] .horarios-seccion {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .horarios-seccion::before, html[data-tema="pilates"] .horarios-seccion::after {
+  background: repeating-linear-gradient(-45deg, #e6dfdb 0 14px, var(--amarillo) 14px 28px);
+}
+html[data-tema="pilates"] .horarios-seccion .kicker {
+  color: #e6dfdb;
+}
+html[data-tema="pilates"] .horarios-seccion .kicker span {
+  background: #e6dfdb;
+}
+html[data-tema="pilates"] .horarios-seccion .seccion-titulo {
+  color: #e6dfdb;
+}
+html[data-tema="pilates"] .horarios-seccion .seccion-sub {
+  color: rgba(243, 235, 232, 0.8);
+}
+html[data-tema="pilates"] .sobre-amarillo {
+  background: #e6dfdb;
+}
+html[data-tema="pilates"] .horarios {
+  background: #e6dfdb;
+  box-shadow: 12px 12px 0 rgba(60, 48, 36, 0.062);
+}
+html[data-tema="pilates"] .horarios dl > div {
+  border-top: 1px solid #d1cbc8;
+}
+html[data-tema="pilates"] .horarios dt {
+  color: #494a46;
+}
+html[data-tema="pilates"] .nota-ejemplo {
+  color: #686763;
+}
+@media (max-width: 480px) {
+html[data-tema="pilates"] .horarios {
+  box-shadow: 8px 8px 0 rgba(60, 48, 36, 0.062);
+}
+}
+html[data-tema="pilates"] .dato-icono {
+  box-shadow: 0 0 0 5px rgba(85, 157, 123, 0.08);
+}
+html[data-tema="pilates"] .dato-icono svg {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .mapa-caja {
+  background: #e3dcd9;
+  border: 1px solid #d3ccc9;
+}
+html[data-tema="pilates"] .mapa-caja::before {
+  color: #c6c0bd;
+  background: repeating-linear-gradient(45deg, #e3dcd9 0 14px, #e0d9d6 14px 28px);
+}
+html[data-tema="pilates"] .mapa-pie {
+  border-top: 1px solid #d3ccc9;
+}
+html[data-tema="pilates"] .mapa-pie {
+  background: #e3dcd9;
+}
+html[data-tema="pilates"] .mapa-pie small {
+  color: #686763;
+}
+html[data-tema="pilates"] footer {
+  background: #efe7e4;
+}
+html[data-tema="pilates"] .pie-marca {
+  -webkit-text-stroke: 2px #cfc9c6;
+}
+html[data-tema="pilates"] .socio-pagina {
+  background: radial-gradient(700px 380px at 100% 0%, rgba(85, 157, 123, 0.154), transparent 65%), #e9e1de;
+}
+html[data-tema="pilates"] .socio-pagina form.inscripcion {
+  background: #e5dedb;
+  border: 1px solid #d3ccc9;
+  box-shadow: 0 24px 60px rgba(60, 48, 36, 0.126);
+}
+html[data-tema="pilates"] .socio-pagina input, html[data-tema="pilates"] .socio-pagina select {
+  background: #d8d1ce;
+  border: 2px solid #c9c3c0;
+}
+html[data-tema="pilates"] .socio-pagina input:hover, html[data-tema="pilates"] .socio-pagina select:hover {
+  border-color: #b1ada9;
+}
+html[data-tema="pilates"] .socio-tarjeta {
+  background: #e5dedb;
+  border: 1px solid #d3ccc9;
+  box-shadow: 0 24px 60px rgba(60, 48, 36, 0.126);
+}
+html[data-tema="pilates"] .socio-tarjeta h3 {
+  border-top: 1px solid #d3ccc9;
+}
+html[data-tema="pilates"] .socio-datos > div {
+  background: #dfd8d5;
+}
+html[data-tema="pilates"] .socio-datos dt {
+  color: #686763;
+}
+html[data-tema="pilates"] .fila-pago {
+  border-top: 1px solid #d3ccc9;
+}
+html[data-tema="pilates"] .fila-pago small {
+  color: #686763;
+}
+html[data-tema="pilates"] .insignia.pendiente {
+  background: rgba(124, 122, 118, 0.22);
+  color: #4c4d49;
+}
+html[data-tema="pilates"] .carnet-pase {
+  background: rgba(46, 48, 44, 0.04);
+  border: 1px solid rgba(46, 48, 44, 0.1);
+}
+html[data-tema="pilates"] .carnet-qr {
+  background: #2e302c;
+  box-shadow: 0 0 0 4px rgba(60, 48, 36, 0.028), 0 14px 34px rgba(60, 48, 36, 0.154);
+}
+html[data-tema="pilates"] .carnet-pase-txt small {
+  color: #686763;
+}
+html[data-tema="pilates"] .yappy-resumen {
+  color: #494a46;
+}
+html[data-tema="pilates"] .yappy-manual {
+  border-top: 1px solid #d3ccc9;
+}
+html[data-tema="pilates"] .yappy-manual ol {
+  color: #494a46;
+}
+html[data-tema="pilates"] .ymodal {
+  background: rgba(243, 235, 232, 0.78);
+}
+html[data-tema="pilates"] .ymodal-caja {
+  background: #e5dedb;
+  border: 1px solid #d3ccc9;
+  box-shadow: 0 40px 100px rgba(60, 48, 36, 0.196);
+}
+html[data-tema="pilates"] .ymodal-cerrar:hover {
+  color: #2e302c;
+  background: #d9d2cf;
+}
+html[data-tema="pilates"] .ymodal-demo {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .ymodal-resumen {
+  background: #dfd8d5;
+}
+html[data-tema="pilates"] .ymodal-resumen .ymodal-monto {
+  border-top: 1px solid #cfc9c5;
+}
+html[data-tema="pilates"] .yespera p {
+  color: #52524f;
+}
+html[data-tema="pilates"] .yspinner {
+  border: 6px solid #ccc6c2;
+}
+html[data-tema="pilates"] .ycheck {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .ycomprobante {
+  background: #dfd8d5;
+}
+html[data-tema="pilates"] .ypase {
+  background: #dfd8d5;
+}
+html[data-tema="pilates"] .ypase p {
+  color: #52524f;
+}
+html[data-tema="pilates"] .yappy-numero {
+  background: #dfd8d5;
+}
+html[data-tema="pilates"] .yappy-numero small {
+  color: #53534f;
+}
+html[data-tema="pilates"] .yappy-numero small b {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .yappy-pasos {
+  color: #494a46;
+}
+html[data-tema="pilates"] .yappy-o::before, html[data-tema="pilates"] .yappy-o::after {
+  background: #ccc6c2;
+}
+html[data-tema="pilates"] .legal-fecha {
+  color: #686763;
+}
+html[data-tema="pilates"] .legal-resumen {
+  background: #e5dedb;
+  border: 1px solid #d3ccc9;
+}
+html[data-tema="pilates"] .legal p, html[data-tema="pilates"] .legal li {
+  color: #494a46;
+}
+html[data-tema="pilates"] .legal strong {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .legal .legal-nota {
+  border-top: 1px solid #d3ccc9;
+}
+
+/* ----- css/efectos.css ----- */
+html[data-tema="pilates"] ::selection {
+  color: #2e302c;
+}
+html[data-tema="pilates"] {
+  scrollbar-color: var(--rojo-vivo) #ebe4e1;
+}
+html[data-tema="pilates"] ::-webkit-scrollbar-track {
+  background: #ebe4e1;
+}
+html[data-tema="pilates"] ::-webkit-scrollbar-thumb {
+  border: 2px solid #ebe4e1;
+}
+html[data-tema="pilates"] .progreso-scroll {
+  box-shadow: 0 0 12px rgba(76, 141, 111, 0.24);
+}
+html[data-tema="pilates"] .btn-amarillo::before {
+  background: #2e302c;
+}
+html[data-tema="pilates"] .btn-rojo:hover {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .btn-borde:hover {
+  color: #e6dfdb;
+}
+html[data-tema="pilates"] .plan:hover .btn-gris {
+  color: #e6dfdb;
+}
+html[data-tema="pilates"] .plan.destacado .btn-gris::before {
+  background: #2e302c;
+}
+html[data-tema="pilates"] .barra.compacta {
+  box-shadow: 0 10px 30px rgba(60, 48, 36, 0.154);
+}
+html[data-tema="pilates"] .portada::before {
+  background: radial-gradient(1000px 640px at 90% 25%, rgba(85, 159, 124, 0.434), transparent 62%),
+    linear-gradient(95deg, rgba(237, 229, 226, 0.96) 0%, rgba(235, 228, 225, 0.62) 50%, rgba(222, 234, 228, 0.245) 100%),
+    linear-gradient(0deg, #e9e1de 0%, transparent 28%);
+}
+html[data-tema="pilates"] .portada::after {
+  background: radial-gradient(420px 420px at var(--mx) var(--my), rgba(76, 141, 111, 0.112), transparent 70%);
+}
+html[data-tema="pilates"] .portada-marca {
+  -webkit-text-stroke: 2px rgba(46, 48, 44, 0.14);
+}
+html[data-tema="pilates"] .portada h1 {
+  text-shadow: 0 6px 40px rgba(60, 48, 36, 0.168);
+}
+html[data-tema="pilates"] .portada h1 em {
+  background: linear-gradient(100deg, #59a682, var(--amarillo) 50%, #559d7b);
+}
+html[data-tema="pilates"] .cifras li {
+  background: linear-gradient(90deg, rgba(76, 141, 111, 0.084), transparent);
+}
+html[data-tema="pilates"] .cifras strong {
+  text-shadow: 0 0 28px rgba(76, 141, 111, 0.14);
+}
+html[data-tema="pilates"] .logo-grande {
+  box-shadow: 0 0 0 7px var(--rojo-vivo), 0 0 0 16px rgba(85, 157, 123, 0.1), 0 30px 120px rgba(85, 159, 124, 0.3);
+}
+html[data-tema="pilates"] .emblema::after {
+  background: radial-gradient(circle, rgba(85, 157, 123, 0.35), transparent 60%);
+}
+html[data-tema="pilates"] .scroll-ind {
+  color: #484945;
+}
+html[data-tema="pilates"] .scroll-ind i {
+  border: 2px solid #484945;
+}
+html[data-tema="pilates"] .marquee {
+  box-shadow: 0 10px 40px rgba(60, 48, 36, 0.168);
+}
+html[data-tema="pilates"] .marquee-2 {
+  color: #2e302c;
+  border-color: #e6dfdb;
+}
+html[data-tema="pilates"] .num-grande {
+  -webkit-text-stroke: 2px rgba(46, 48, 44, 0.08);
+}
+html[data-tema="pilates"] .horarios-seccion .num-grande {
+  -webkit-text-stroke-color: rgba(243, 235, 232, 0.14);
+}
+html[data-tema="pilates"] .seccion-titulo {
+  text-shadow: 0 4px 24px rgba(60, 48, 36, 0.098);
+}
+html[data-tema="pilates"] .kicker span {
+  box-shadow: 4px 4px 0 rgba(60, 48, 36, 0.05);
+}
+html[data-tema="pilates"] .planes::before {
+  background: repeating-linear-gradient(115deg, transparent 0 80px, rgba(46, 48, 44, 0.018) 80px 82px);
+}
+html[data-tema="pilates"] .plan {
+  background: radial-gradient(circle at var(--gx) var(--gy), rgba(46, 48, 44, 0.11), transparent 42%), linear-gradient(180deg, #dad4d0, #e5dedb);
+}
+html[data-tema="pilates"] .plan.destacado {
+  background: radial-gradient(circle at var(--gx) var(--gy), rgba(46, 48, 44, 0.28), transparent 45%), linear-gradient(160deg, #559d7b, #447e63);
+}
+@media (hover: hover) {
+html[data-tema="pilates"] .plan:hover {
+  box-shadow: 0 30px 60px rgba(60, 48, 36, 0.182), 0 0 40px rgba(85, 157, 123, 0.1);
+}
+}
+@media (min-width: 1000px) {
+html[data-tema="pilates"] .plan.destacado {
+  box-shadow: 0 34px 90px rgba(85, 157, 123, 0.24), 0 0 0 3px var(--amarillo);
+}
+}
+html[data-tema="pilates"] .plan .precio {
+  text-shadow: 0 4px 30px rgba(60, 48, 36, 0.14);
+}
+html[data-tema="pilates"] .plan.destacado::after {
+  background: linear-gradient(115deg, transparent 35%, rgba(46, 48, 44, 0.22) 50%, transparent 65%);
+}
+html[data-tema="pilates"] .plan-valor {
+  border-top: 1px dashed rgba(46, 48, 44, 0.22);
+}
+html[data-tema="pilates"] .pv-dia {
+  color: #484945;
+}
+html[data-tema="pilates"] .pv-barra {
+  background: rgba(46, 48, 44, 0.12);
+}
+html[data-tema="pilates"] .pv-barra i {
+  background: linear-gradient(90deg, var(--amarillo), #559d7b);
+}
+html[data-tema="pilates"] .pv-ahorro {
+  color: #585855;
+}
+html[data-tema="pilates"] .plan.destacado .pv-ahorro {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .plan .cinta {
+  box-shadow: 0 4px 12px rgba(60, 48, 36, 0.112);
+}
+html[data-tema="pilates"] .pagos .chip {
+  background: rgba(46, 48, 44, 0.04);
+}
+html[data-tema="pilates"] .inscripcion-pro {
+  box-shadow: 0 40px 100px rgba(60, 48, 36, 0.182), 0 0 0 1px rgba(76, 141, 111, 0.072);
+}
+html[data-tema="pilates"] #beneficios::before {
+  background: radial-gradient(circle, rgba(85, 157, 123, 0.175), transparent 65%);
+}
+html[data-tema="pilates"] .beneficio {
+  background: radial-gradient(260px circle at var(--gx) var(--gy), rgba(76, 141, 111, 0.098), transparent 70%), #e3dcd9;
+}
+html[data-tema="pilates"] .beneficio svg {
+  box-shadow: 8px 8px 0 var(--rojo-vivo), 0 18px 40px rgba(76, 141, 111, 0.1);
+}
+html[data-tema="pilates"] .beneficio:hover svg {
+  box-shadow: 12px 12px 0 var(--rojo-vivo), 0 22px 50px rgba(76, 141, 111, 0.16);
+}
+html[data-tema="pilates"] .beneficio::after {
+  -webkit-text-stroke-color: #c5bfbc;
+}
+html[data-tema="pilates"] .lightbox {
+  background: rgba(243, 235, 232, 0.92);
+}
+html[data-tema="pilates"] .lightbox img {
+  box-shadow: 0 30px 90px rgba(60, 48, 36, 0.224), 0 0 0 4px var(--amarillo);
+}
+html[data-tema="pilates"] .lightbox button {
+  border: 2px solid #2e302c;
+  background: rgba(243, 235, 232, 0.5);
+  color: #2e302c;
+}
+html[data-tema="pilates"] .lightbox button:hover {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .horarios-seccion {
+  background: repeating-linear-gradient(-45deg, #549d7b 0 40px, var(--amarillo) 40px 80px);
+}
+html[data-tema="pilates"] .horarios {
+  background: radial-gradient(320px circle at var(--gx) var(--gy), rgba(76, 141, 111, 0.112), transparent 70%), #e6dfdb;
+  border: 1px solid #ccc6c2;
+}
+html[data-tema="pilates"] .horarios dl > div:hover {
+  background: rgba(76, 141, 111, 0.049);
+}
+html[data-tema="pilates"] #contacto {
+  background: linear-gradient(180deg, rgba(233, 225, 222, 0.68), rgba(233, 225, 222, 0.86)), url('../assets/fotos/sala.png') center / cover fixed;
+}
+html[data-tema="pilates"] .datos-contacto {
+  background: rgba(46, 48, 44, 0.07);
+  border: 1px solid rgba(46, 48, 44, 0.18);
+  box-shadow: 0 24px 60px rgba(60, 48, 36, 0.112), inset 0 1px 0 rgba(60, 48, 36, 0.056);
+}
+html[data-tema="pilates"] .dato:hover {
+  background: rgba(46, 48, 44, 0.07);
+}
+html[data-tema="pilates"] .mapa-caja {
+  border-color: rgba(46, 48, 44, 0.18);
+  box-shadow: 0 24px 60px rgba(60, 48, 36, 0.126);
+}
+html[data-tema="pilates"] .pie-marca {
+  -webkit-text-stroke-color: #c6c0bd;
+  background: linear-gradient(90deg, transparent, rgba(85, 157, 123, 0.245), transparent) 0 0 / 200% 100%;
+}
+html[data-tema="pilates"] .cta-movil {
+  color: #2e302c;
+  box-shadow: 0 14px 40px rgba(60, 48, 36, 0.196), 0 0 0 3px rgba(60, 48, 36, 0.28), 0 0 30px rgba(76, 141, 111, 0.16);
+}
+html[data-tema="pilates"] .barra:not(.barra-flotante) {
+  box-shadow: 0 6px 24px rgba(60, 48, 36, 0.14);
+}
+html[data-tema="pilates"] .socio-pagina {
+  background: radial-gradient(800px 460px at 100% 0%, rgba(85, 157, 123, 0.28), transparent 65%), radial-gradient(600px 400px at 0% 100%, rgba(76, 141, 111, 0.056), transparent 65%), repeating-linear-gradient(115deg, transparent 0 70px, rgba(46, 48, 44, 0.015) 70px 72px), #e9e1de;
+}
+html[data-tema="pilates"] .socio-tarjeta {
+  border: 1px solid #ccc6c2;
+  background: radial-gradient(500px 300px at 100% 0%, color-mix(in srgb, var(--est) 22%, transparent), transparent 70%), linear-gradient(160deg, #ddd6d3, #e7e0dd);
+  box-shadow: 0 30px 80px rgba(60, 48, 36, 0.168), 0 0 0 1px color-mix(in srgb, var(--est) 35%, transparent);
+}
+html[data-tema="pilates"] .socio-tarjeta::after {
+  -webkit-text-stroke: 1.5px rgba(46, 48, 44, 0.05);
+}
+html[data-tema="pilates"] .carnet-medidor {
+  background: rgba(46, 48, 44, 0.04);
+  border: 1px solid rgba(46, 48, 44, 0.08);
+}
+html[data-tema="pilates"] .anillo .a-fondo {
+  stroke: #d3ccc9;
+}
+html[data-tema="pilates"] .anillo-centro small {
+  color: #686763;
+}
+html[data-tema="pilates"] .carnet-medidor .barra-dias {
+  background: #d3ccc9;
+}
+html[data-tema="pilates"] .socio-datos > div {
+  background: rgba(46, 48, 44, 0.05);
+}
+
+/* ----- css/miplan.css ----- */
+html[data-tema="pilates"] .miplan-bienvenida {
+  background: rgba(76, 141, 111, 0.056);
+}
+html[data-tema="pilates"] .miplan-bienvenida p {
+  color: #41423e;
+}
+html[data-tema="pilates"] .miplan-sesion {
+  background: #e3dcd9;
+  border: 1px solid #d3ccc9;
+}
+html[data-tema="pilates"] .miplan-sesion p {
+  color: #53534f;
+}
+html[data-tema="pilates"] .miplan-instalar {
+  background: linear-gradient(135deg, rgba(85, 157, 123, 0.126), rgba(76, 141, 111, 0.042)), #e4dcd9;
+  border: 1px solid rgba(76, 141, 111, 0.4);
+}
+html[data-tema="pilates"] .miplan-instalar img {
+  box-shadow: 0 0 0 1px rgba(60, 48, 36, 0.034);
+}
+html[data-tema="pilates"] .miplan-instalar p {
+  color: #4e4e4a;
+}
+html[data-tema="pilates"] .qr-cuenta {
+  color: #4e4e4a;
+}
+html[data-tema="pilates"] .qr-cuenta-barra {
+  background: #cfc9c6;
+}
+html[data-tema="pilates"] .pase-pestanas {
+  background: #e7e0dd;
+  border: 1px solid #d1cbc8;
+}
+html[data-tema="pilates"] .pase-pestanas [role="tab"] {
+  color: #53534f;
+}
+html[data-tema="pilates"] .pase-pestanas [role="tab"]:hover {
+  color: #2e302c;
+  background: #dbd4d1;
+}
+html[data-tema="pilates"] .pase-pestanas [role="tab"][aria-selected="true"] {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .pase-pestanas [role="tab"]:focus-visible {
+  outline: 3px solid #2e302c;
+}
+html[data-tema="pilates"] .pase-diario {
+  background: rgba(76, 141, 111, 0.049);
+}
+html[data-tema="pilates"] .pase-qr {
+  background: #2e302c;
+  box-shadow: 0 0 0 4px rgba(60, 48, 36, 0.028), 0 14px 34px rgba(60, 48, 36, 0.154);
+}
+html[data-tema="pilates"] .pase-diario.usado {
+  background: rgba(46, 48, 44, 0.03);
+  border: 1px solid #ccc6c2;
+}
+html[data-tema="pilates"] .pase-diario.usado .pase-diario-tit {
+  color: #7c7a76;
+}
+html[data-tema="pilates"] .pase-usado-txt {
+  color: #71706c;
+}
+html[data-tema="pilates"] .pase-nota {
+  background: rgba(46, 48, 44, 0.04);
+  color: #494a46;
+}
+html[data-tema="pilates"] .pago-fila {
+  border-top: 1px solid #d3ccc9;
+}
+html[data-tema="pilates"] .pago-sub {
+  color: #686763;
+}
+html[data-tema="pilates"] .miplan-datos {
+  background: #e5dedb;
+  border: 1px solid #d3ccc9;
+}
+html[data-tema="pilates"] .miplan-datos summary:hover {
+  background: #e1dad7;
+}
+html[data-tema="pilates"] .miplan-datos-sub {
+  color: #686763;
+}
+html[data-tema="pilates"] .datos-lista > div {
+  border-bottom: 1px solid #d8d1ce;
+}
+html[data-tema="pilates"] .datos-lista dt {
+  color: #686763;
+}
+html[data-tema="pilates"] .datos-nota {
+  color: #52524f;
+}
+html[data-tema="pilates"] .datos-caja {
+  background: #dfd8d5;
+}
+html[data-tema="pilates"] .socio-pagina textarea {
+  background: #d8d1ce;
+  border: 2px solid #c9c3c0;
+}
+html[data-tema="pilates"] .socio-pagina textarea::placeholder {
+  color: #888682;
+}
+html[data-tema="pilates"] .socio-pagina textarea:focus {
+  box-shadow: 0 0 0 4px rgba(76, 141, 111, 0.1);
+}
+html[data-tema="pilates"] .mensaje.nota {
+  background: rgba(46, 48, 44, 0.06);
+  color: #464743;
+  border-left: 4px solid #888682;
+}
+html[data-tema="pilates"] .derechos-lista li {
+  background: #dfd8d5;
+}
+html[data-tema="pilates"] .derecho-info small {
+  color: #686763;
+}
+html[data-tema="pilates"] .derecho-respuesta {
+  color: #494a46;
+}
+
+/* ----- css/tour.css ----- */
+html[data-tema="pilates"] .tour-velo {
+  background: rgba(243, 235, 232, 0.76);
+}
+html[data-tema="pilates"] .tour-foco {
+  box-shadow: 0 0 0 9999px rgba(60, 48, 36, 0.213);
+  outline: 3px solid #4c8d6f;
+}
+html[data-tema="pilates"] .tour-cursor {
+  filter: drop-shadow(0 4px 8px rgba(60, 48, 36, 0.182));
+}
+html[data-tema="pilates"] .tour-cursor svg {
+  fill: #2e302c;
+  stroke: #e6dfdb;
+}
+html[data-tema="pilates"] .tour-onda {
+  border: 3px solid #4c8d6f;
+}
+html[data-tema="pilates"] .tour-burbuja {
+  background: #e5dedb;
+  color: #2e302c;
+  border: 1px solid #d3ccc9;
+  border-top: 8px solid #4c8d6f;
+  box-shadow: 0 20px 60px rgba(60, 48, 36, 0.196);
+}
+html[data-tema="pilates"] .tour-nivel {
+  color: #4c8d6f;
+}
+html[data-tema="pilates"] .tour-estrellas svg {
+  fill: #4c8d6f;
+}
+html[data-tema="pilates"] .tour-barra {
+  background: #d3ccc9;
+}
+html[data-tema="pilates"] .tour-barra i {
+  background: #4c8d6f;
+}
+html[data-tema="pilates"] .tour-texto {
+  color: #4e4e4a;
+}
+html[data-tema="pilates"] .tour-grandes svg {
+  fill: #4c8d6f;
+}
+html[data-tema="pilates"] .tour-salir {
+  color: #7c7a76;
+}
+html[data-tema="pilates"] .tour-salir:hover {
+  color: #2e302c;
+}
+html[data-tema="pilates"] .tour-fab {
+  background: #4c8d6f;
+  color: #2e302c;
+  box-shadow: 0 10px 30px rgba(60, 48, 36, 0.14);
+}
+html[data-tema="pilates"] .tour-fab:hover {
+  background: #59a682;
+}
+html[data-tema="pilates"] .tour-raiz[data-tactil="1"][data-modo="jugar"] .tour-cursor::before {
+  background: rgba(76, 141, 111, 0.245);
+  border: 3px solid #4c8d6f;
+}
+@media (max-width: 640px) {
+html[data-tema="pilates"] .tour-salir {
+  background: #dbd4d1;
+}
+}
+/* ==========================================================
+   Componentes del tema Pilates (van al final para ganar a lo derivado)
+   ========================================================== */
+html[data-tema="pilates"] body { font-family: var(--texto); font-weight: 400; font-size: 17px; line-height: 1.55; letter-spacing: -0.023em; color: #333333; background: var(--pergamino); }
+html[data-tema="pilates"] h1, html[data-tema="pilates"] h2, html[data-tema="pilates"] h3 {
+  font-family: var(--titulos); font-weight: 600; text-transform: none; letter-spacing: normal; line-height: 1.05; color: var(--tinta);
+  
+}
+html[data-tema="pilates"] .seccion-titulo { font-size: clamp(2.4rem, 5.2vw, 4rem); font-weight: 400; line-height: 1.04; margin-bottom: 16px; }
+html[data-tema="pilates"] .rojo-texto, html[data-tema="pilates"] .amarillo-texto, html[data-tema="pilates"] .sobre-amarillo {
+  font-weight: 300; color: inherit; background: none; padding: 0; -webkit-text-fill-color: currentColor;
+}
+html[data-tema="pilates"] .seccion-sub { font-size: 1.12rem; font-weight: 300; line-height: 1.5; color: var(--grafito); max-width: 52ch; margin-bottom: 48px; }
+html[data-tema="pilates"] .kicker { font-family: var(--texto); font-weight: 600; font-size: 0.78rem; letter-spacing: -0.02em; text-transform: none; color: var(--sello); gap: 10px; margin-bottom: 14px; }
+html[data-tema="pilates"] .kicker span { background: none; padding: 0; color: var(--sello); letter-spacing: -0.02em; }
+html[data-tema="pilates"] .kicker::after { display: none; }
+html[data-tema="pilates"] .num-grande, html[data-tema="pilates"] .portada-marca, html[data-tema="pilates"] .marca-agua, html[data-tema="pilates"] .scroll-ind,
+html[data-tema="pilates"] .emblema, html[data-tema="pilates"] .marquee, html[data-tema="pilates"] .marquee-2, html[data-tema="pilates"] .progreso-scroll,
+html[data-tema="pilates"] .pie-marca, html[data-tema="pilates"] .plan::before, html[data-tema="pilates"] .plan::after, html[data-tema="pilates"] .beneficio::after { display: none !important; }
+html[data-tema="pilates"] .hazard { height: 1px !important; background: var(--taupe) !important; border-radius: 0; }
+html[data-tema="pilates"] .portada .hazard { display: none; }
+
+/* ----- Botones: píldora de 40px, sin sombras ----- */
+html[data-tema="pilates"] .btn {
+  font-family: var(--texto); font-weight: 600; font-size: 1rem; letter-spacing: -0.023em; text-transform: none; line-height: 1.2;
+  border-radius: 40px; border: 1.5px solid transparent; padding: 12px 24px; min-height: 48px; box-shadow: none; animation: none;
+}
+html[data-tema="pilates"] .btn::before, html[data-tema="pilates"] .btn::after { display: none; }
+html[data-tema="pilates"] .btn-chico { padding: 8px 18px; min-height: 40px; font-size: 0.92rem; }
+html[data-tema="pilates"] .btn-grande, html[data-tema="pilates"] .btn-grande-cta { min-height: 54px; font-size: 1.05rem; }
+html[data-tema="pilates"] .btn-amarillo, html[data-tema="pilates"] .btn-rojo { background: var(--relleno); color: var(--tinta); border-color: var(--relleno); box-shadow: none; }
+html[data-tema="pilates"] .btn-amarillo:hover, html[data-tema="pilates"] .btn-rojo:hover { background: var(--relleno-osc); border-color: var(--relleno-osc); color: var(--tinta); box-shadow: none; transform: none; }
+html[data-tema="pilates"] .btn-borde, html[data-tema="pilates"] .btn-gris { background: transparent; color: var(--sello); border-color: var(--sello); }
+html[data-tema="pilates"] .btn-borde:hover, html[data-tema="pilates"] .btn-gris:hover { background: rgba(47, 107, 82, 0.08); color: var(--rojo-oscuro); border-color: var(--rojo-oscuro); }
+html[data-tema="pilates"] :focus-visible { outline: 2px solid var(--sello); outline-offset: 3px; box-shadow: none; }
+html[data-tema="pilates"] .cta-movil { background: var(--relleno); color: var(--tinta); border-radius: 40px; font-family: var(--texto); font-weight: 600; letter-spacing: -0.023em; text-transform: none; box-shadow: var(--sombra); animation: none; }
+html[data-tema="pilates"] .tour-fab { background: var(--relleno); color: var(--tinta); border-radius: 40px; box-shadow: var(--sombra); animation: none; font-family: var(--texto); font-weight: 600; letter-spacing: -0.023em; text-transform: none; }
+
+/* ----- Barra superior: pergamino, línea fina taupe ----- */
+html[data-tema="pilates"] .barra, html[data-tema="pilates"] .barra-flotante, html[data-tema="pilates"] .barra-flotante.solida, html[data-tema="pilates"] .barra-flotante.menu-abierto {
+  background: rgba(243, 235, 232, 0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--taupe); box-shadow: none; color: var(--tinta);
+}
+html[data-tema="pilates"] .barra .wrap { min-height: 68px; }
+html[data-tema="pilates"] .marca img { width: 40px; height: 40px; box-shadow: none; }
+html[data-tema="pilates"] .marca span { font-family: var(--titulos); font-weight: 600; font-size: 1.55rem; letter-spacing: normal; text-transform: none; color: var(--tinta); }
+html[data-tema="pilates"] .menu a { font-family: var(--texto); font-weight: 400; font-size: 0.95rem; letter-spacing: -0.023em; text-transform: none; color: var(--tinta); padding: 8px 12px; border-radius: 12px; }
+html[data-tema="pilates"] .menu a:hover { background: var(--papel); }
+html[data-tema="pilates"] .menu a::after { display: none; }
+html[data-tema="pilates"] .barra .btn-borde { border-color: transparent; color: var(--tinta); }
+html[data-tema="pilates"] .barra .btn-borde:hover { background: var(--papel); color: var(--tinta); }
+html[data-tema="pilates"] .hamb { color: var(--tinta); }
+html[data-tema="pilates"] .menu-movil { background: var(--pergamino); border-top: 1px solid var(--taupe); }
+html[data-tema="pilates"] .menu-movil a { font-family: var(--texto); font-weight: 400; text-transform: none; letter-spacing: -0.023em; color: var(--tinta); border-bottom: 1px solid var(--taupe); }
+html[data-tema="pilates"] .tema-btn { background: transparent; border: 1.5px solid var(--taupe); color: var(--tinta); font-family: var(--texto); font-weight: 600; font-size: 0.9rem; letter-spacing: -0.023em; }
+html[data-tema="pilates"] .tema-btn:hover { background: var(--papel); border-color: var(--sello); }
+
+/* ----- Portada: fotografía/video a pantalla completa con velo cálido ----- */
+html[data-tema="pilates"] .portada { background: #2a2b2f; color: var(--pergamino); padding-top: 68px; }
+html[data-tema="pilates"] .portada-foto { background: #2a2b2f url('../assets/video/hero-pilates.jpg') center / cover no-repeat; filter: none; opacity: 1; transform: none; animation: none; }
+html[data-tema="pilates"] .portada::before {
+  background: linear-gradient(116deg, rgba(137, 193, 165, 0.34) 0%, rgba(137, 193, 165, 0) 62%), linear-gradient(rgba(30, 38, 34, 0.58), rgba(30, 38, 34, 0.66));
+}
+html[data-tema="pilates"] .portada-grid { grid-template-columns: 1fr; }
+html[data-tema="pilates"] .portada .etiqueta {
+  background: transparent; color: var(--pergamino); border: 1px solid rgba(243, 235, 232, 0.55); border-radius: 999px; padding: 6px 14px;
+  font-family: var(--texto); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: none; margin-bottom: 26px;
+}
+html[data-tema="pilates"] .portada h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 400; line-height: 0.98; letter-spacing: normal; color: var(--pergamino); }
+html[data-tema="pilates"] .portada h1 em { font-weight: 300; color: var(--pergamino); background: none !important; -webkit-text-fill-color: var(--pergamino); }
+html[data-tema="pilates"] .portada-bajada { font-size: 1.15rem; font-weight: 300; line-height: 1.5; color: rgba(243, 235, 232, 0.86); max-width: 46ch; }
+html[data-tema="pilates"] .portada .btn-borde { color: var(--pergamino); border-color: rgba(243, 235, 232, 0.7); }
+html[data-tema="pilates"] .portada .btn-borde:hover { background: rgba(243, 235, 232, 0.14); color: var(--pergamino); border-color: var(--pergamino); }
+html[data-tema="pilates"] .cifras { gap: 24px 40px; }
+html[data-tema="pilates"] .cifras li { background: none; border-left: 1px solid rgba(243, 235, 232, 0.4); padding: 4px 0 4px 20px; }
+html[data-tema="pilates"] .cifras strong { font-family: var(--titulos); font-weight: 600; font-size: 2.8rem; color: var(--pergamino); text-shadow: none; }
+html[data-tema="pilates"] .cifras span { font-size: 0.9rem; text-transform: none; letter-spacing: -0.023em; color: rgba(243, 235, 232, 0.8); }
+
+/* ----- Planes ----- */
+html[data-tema="pilates"] #planes, html[data-tema="pilates"] .planes { background: var(--pergamino); }
+html[data-tema="pilates"] .planes-grid { gap: 24px; }
+html[data-tema="pilates"] .plan {
+  background: var(--papel); border: 1px solid var(--taupe); border-radius: 28px; padding: 40px 32px; box-shadow: none; backdrop-filter: none; transform: none !important; color: #333333;
+}
+html[data-tema="pilates"] .plan h3 { font-family: var(--texto); font-weight: 600; font-size: 0.78rem; letter-spacing: -0.02em; text-transform: none; color: var(--sello); }
+html[data-tema="pilates"] .plan .precio { font-family: var(--titulos); font-weight: 600; font-size: 3rem; color: var(--tinta); text-shadow: none; letter-spacing: normal; }
+html[data-tema="pilates"] .plan .precio small { font-size: 1.4rem; margin-top: 0.5rem; color: var(--tinta); }
+html[data-tema="pilates"] .plan .duracion { color: var(--grafito); }
+html[data-tema="pilates"] .plan .btn { background: transparent; color: var(--sello); border-color: var(--sello); }
+html[data-tema="pilates"] .plan .btn:hover { background: rgba(47, 107, 82, 0.08); }
+html[data-tema="pilates"] .plan.destacado { background: var(--pergamino); border: 1.5px solid var(--sello); box-shadow: var(--sombra); color: #333333; }
+html[data-tema="pilates"] .plan.destacado h3, html[data-tema="pilates"] .plan.destacado .duracion { color: var(--sello); }
+html[data-tema="pilates"] .plan.destacado .duracion { color: var(--grafito); }
+html[data-tema="pilates"] .plan.destacado .precio, html[data-tema="pilates"] .plan.destacado .precio small { color: var(--tinta); text-shadow: none; }
+html[data-tema="pilates"] .plan.destacado .btn { background: var(--relleno); color: var(--tinta); border-color: var(--relleno); }
+html[data-tema="pilates"] .plan .cinta {
+  position: absolute; top: 16px; right: 16px; left: auto; transform: none; width: auto; padding: 4px 12px; border-radius: 999px;
+  background: var(--azul); color: var(--tinta); font-family: var(--texto); font-weight: 600; font-size: 0.68rem; letter-spacing: 0.04em; text-transform: none; box-shadow: none;
+}
+html[data-tema="pilates"] .pv-barra, html[data-tema="pilates"] .plan [class*="barra"] { background: var(--taupe); }
+html[data-tema="pilates"] .pv-barra i { background: var(--relleno); }
+html[data-tema="pilates"] .pagos > span:first-child { font-family: var(--texto); font-weight: 600; font-size: 0.78rem; letter-spacing: -0.02em; text-transform: none; color: var(--grafito); }
+html[data-tema="pilates"] .chip { background: transparent; border: 1px solid var(--taupe); border-radius: 999px; color: #333333; font-family: var(--texto); font-weight: 400; letter-spacing: -0.023em; text-transform: none; padding: 4px 14px; }
+
+/* ----- Inscripción ----- */
+html[data-tema="pilates"] .inscribirse { background: var(--menta-suave); clip-path: none; }
+html[data-tema="pilates"] .inscribirse::before, html[data-tema="pilates"] .inscribirse::after { display: none; }
+html[data-tema="pilates"] .pasos .paso-num { background: transparent; color: var(--sello); border: 1.5px solid var(--sello); box-shadow: none; font-family: var(--titulos); font-weight: 600; animation: none; }
+html[data-tema="pilates"] .pasos strong { font-family: var(--texto); font-weight: 600; color: var(--tinta); }
+html[data-tema="pilates"] .pasos small { color: var(--grafito); font-weight: 400; }
+html[data-tema="pilates"] .garantias { border-top: 1px solid var(--taupe); }
+html[data-tema="pilates"] .garantias li { color: #333333; }
+html[data-tema="pilates"] .garantias svg { color: var(--sello); }
+html[data-tema="pilates"] .inscripcion-pro, html[data-tema="pilates"] .socio-pagina form.inscripcion { background: var(--pergamino); border: 1px solid var(--taupe); border-radius: 28px; box-shadow: var(--sombra); }
+html[data-tema="pilates"] .inscripcion-pro::before, html[data-tema="pilates"] .socio-pagina form.inscripcion::before { display: none; }
+html[data-tema="pilates"] .form-cabecera h3 { font-size: 2rem; }
+html[data-tema="pilates"] .form-cabecera p { color: var(--grafito); }
+html[data-tema="pilates"] .inscripcion-pro legend { font-family: var(--texto); font-weight: 600; font-size: 0.78rem; letter-spacing: -0.02em; text-transform: none; color: var(--sello); }
+html[data-tema="pilates"] .plan-opcion-caja { background: var(--pergamino); border: 1px solid var(--taupe); border-radius: 20px; color: var(--tinta); }
+html[data-tema="pilates"] .plan-opcion-caja strong, html[data-tema="pilates"] .plan-opcion-caja .precio { font-family: var(--titulos); font-weight: 600; color: var(--tinta); }
+html[data-tema="pilates"] .plan-opcion input:checked + .plan-opcion-caja { background: var(--menta-suave); border: 1.5px solid var(--sello); box-shadow: none; }
+html[data-tema="pilates"] .campo > span:first-child { font-family: var(--texto); font-weight: 600; color: var(--tinta); }
+html[data-tema="pilates"] input, html[data-tema="pilates"] select, html[data-tema="pilates"] textarea, html[data-tema="pilates"] .campo-caja input, html[data-tema="pilates"] .socio-pagina input {
+  background: var(--pergamino); color: var(--tinta); border: 1px solid var(--ceniza); border-radius: 9999px; padding-inline: 20px; font-family: var(--texto); font-weight: 400; letter-spacing: -0.023em;
+}
+html[data-tema="pilates"] textarea { border-radius: 28px; }
+html[data-tema="pilates"] input::placeholder, html[data-tema="pilates"] textarea::placeholder { color: var(--grafito); opacity: 0.8; }
+html[data-tema="pilates"] input:focus, html[data-tema="pilates"] select:focus, html[data-tema="pilates"] textarea:focus, html[data-tema="pilates"] .campo-caja input:focus { border-color: var(--sello); box-shadow: 0 0 0 3px rgba(47, 107, 82, 0.22); outline: none; }
+html[data-tema="pilates"] .campo-caja svg { color: var(--sello); }
+html[data-tema="pilates"] .campo-caja input { padding-left: 46px; min-height: 52px; }
+html[data-tema="pilates"] .planes::before, html[data-tema="pilates"] #beneficios::before, html[data-tema="pilates"] .inscribirse::before, html[data-tema="pilates"] .galeria::before, html[data-tema="pilates"] #contacto::before { display: none; }
+html[data-tema="pilates"] .casilla input { border-radius: 6px; padding: 0; }
+html[data-tema="pilates"] .form-nota { color: var(--grafito); }
+
+/* ----- Beneficios: tarjetas numeradas ----- */
+html[data-tema="pilates"] #beneficios { background: var(--pergamino); }
+html[data-tema="pilates"] .beneficios-grid { counter-reset: paso; gap: 24px; }
+html[data-tema="pilates"] .beneficio { counter-increment: paso; background: var(--papel); border: 1px solid var(--taupe); border-radius: 28px; padding: 40px 32px; box-shadow: none; transform: none !important; }
+html[data-tema="pilates"] .beneficio::before { content: "0" counter(paso); display: block; position: static; width: auto; height: auto; background: none; margin-bottom: 18px; font: 600 0.78rem/1 var(--texto); letter-spacing: -0.02em; color: var(--sello); }
+html[data-tema="pilates"] .beneficio svg { display: none; }
+html[data-tema="pilates"] .beneficio h3 { font-size: 2rem; margin-bottom: 10px; }
+html[data-tema="pilates"] .beneficio p { color: #333333; font-weight: 400; }
+
+/* ----- Galería ----- */
+html[data-tema="pilates"] .galeria { background: var(--azul-suave); }
+html[data-tema="pilates"] .foto { border-radius: 28px; border: 0; box-shadow: none; }
+html[data-tema="pilates"] .foto::after { background: linear-gradient(180deg, transparent 55%, rgba(30, 38, 34, 0.6)); }
+html[data-tema="pilates"] .foto figcaption { color: var(--pergamino); font-family: var(--texto); font-weight: 600; font-size: 0.78rem; letter-spacing: -0.02em; text-transform: none; }
+html[data-tema="pilates"] .foto figcaption::before { background: var(--pergamino); }
+html[data-tema="pilates"] .foto.vacia { background: var(--pergamino) url('../assets/logo-pilates.png') center / 28% no-repeat; border: 1px solid var(--taupe); }
+html[data-tema="pilates"] .foto.vacia::before { background: rgba(243, 235, 232, 0.82); }
+html[data-tema="pilates"] .foto.vacia span { color: var(--grafito); font-family: var(--texto); font-weight: 400; letter-spacing: -0.023em; text-transform: none; }
+
+/* ----- Horarios ----- */
+html[data-tema="pilates"] .horarios-seccion { background: var(--pergamino); color: var(--tinta); }
+html[data-tema="pilates"] .horarios-seccion::before, html[data-tema="pilates"] .horarios-seccion::after { display: none; }
+html[data-tema="pilates"] .horarios-seccion .kicker, html[data-tema="pilates"] .horarios-seccion .kicker span { color: var(--sello); }
+html[data-tema="pilates"] .horarios-seccion .seccion-titulo { color: var(--tinta); }
+html[data-tema="pilates"] .horarios-seccion .seccion-sub { color: var(--grafito); }
+html[data-tema="pilates"] .horarios { background: var(--papel); border: 1px solid var(--taupe); border-radius: 28px; box-shadow: none; color: #333333; }
+html[data-tema="pilates"] .horarios h3 { font-family: var(--texto); font-weight: 600; font-size: 0.78rem; letter-spacing: -0.02em; text-transform: none; color: var(--sello); }
+html[data-tema="pilates"] .horarios dl > div { border-color: var(--taupe); }
+html[data-tema="pilates"] .horarios dl > div:hover { background: rgba(47, 107, 82, 0.07); }
+html[data-tema="pilates"] .horarios dt { font-weight: 600; color: var(--tinta); }
+html[data-tema="pilates"] .horarios dd { font-family: var(--titulos); font-weight: 600; color: var(--tinta); }
+html[data-tema="pilates"] .nota-ejemplo { color: var(--grafito); }
+
+/* ----- Contacto ----- */
+html[data-tema="pilates"] #contacto { background: var(--menta-suave) !important; }
+html[data-tema="pilates"] .datos-contacto { background: var(--pergamino); border: 1px solid var(--taupe); border-radius: 28px; box-shadow: none; backdrop-filter: none; }
+html[data-tema="pilates"] .dato strong { font-family: var(--texto); font-weight: 600; font-size: 0.78rem; letter-spacing: -0.02em; color: var(--sello); }
+html[data-tema="pilates"] .dato #dato-direccion, html[data-tema="pilates"] .dato a { color: var(--tinta); font-weight: 600; }
+html[data-tema="pilates"] .dato-icono { background: transparent; border: 1.5px solid var(--sello); box-shadow: none; }
+html[data-tema="pilates"] .dato-icono svg { color: var(--sello); }
+html[data-tema="pilates"] .mapa-caja { background: var(--pergamino); border: 1px solid var(--taupe); border-radius: 28px; box-shadow: none; }
+html[data-tema="pilates"] .mapa-pie { background: var(--pergamino); border-top: 1px solid var(--taupe); }
+
+/* ----- Pie ----- */
+html[data-tema="pilates"] footer { background: var(--pergamino); border-top: 1px solid var(--taupe); color: #333333; }
+html[data-tema="pilates"] .pie-lema { font-family: var(--texto); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: none; color: var(--sello); }
+html[data-tema="pilates"] footer a { color: var(--grafito); }
+
+/* ----- Mi plan / aviso de privacidad ----- */
+html[data-tema="pilates"] .socio-pagina { background: var(--pergamino); }
+html[data-tema="pilates"] .socio-datos > div { background: var(--papel); border-left: 0; border-radius: 16px; }
+html[data-tema="pilates"] .insignia { font-family: var(--texto); font-weight: 600; letter-spacing: -0.02em; text-transform: none; border-radius: 999px; }
+html[data-tema="pilates"] .acceso a, html[data-tema="pilates"] .acceso { color: var(--grafito); }
+html[data-tema="pilates"] h1, html[data-tema="pilates"] h2, html[data-tema="pilates"] h3, html[data-tema="pilates"] .seccion-titulo, html[data-tema="pilates"] .kicker { text-shadow: none; }
+html[data-tema="pilates"] .kicker span { transform: none; box-shadow: none; }
+html[data-tema="pilates"] .kicker span::before, html[data-tema="pilates"] .kicker span::after { display: none; }
+
+/* ----- Bloques solo de Pilates: llenan los espacios en blanco con información útil ----- */
+html[data-tema="pilates"] .tarifario { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 56px; }
+@media (min-width: 900px) { html[data-tema="pilates"] .tarifario { grid-template-columns: 1.1fr 1fr 1fr; } }
+html[data-tema="pilates"] .tarifa-col { background: var(--papel); border: 1px solid var(--taupe); border-radius: 28px; padding: 32px; }
+html[data-tema="pilates"] .tarifa-col h3, html[data-tema="pilates"] .primera-vez h3, html[data-tema="pilates"] .referidos h3 { font-size: 1.7rem; margin-bottom: 14px; }
+html[data-tema="pilates"] .tarifa-col ul { list-style: none; margin: 0; padding: 0; }
+html[data-tema="pilates"] .tarifa-col li { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--taupe); color: #333333; }
+html[data-tema="pilates"] .tarifa-col li:last-child { border-bottom: 0; }
+html[data-tema="pilates"] .tarifa-col li b { font-family: var(--titulos); font-weight: 600; font-size: 1.3rem; color: var(--tinta); white-space: nowrap; }
+html[data-tema="pilates"] .tarifa-formatos p { color: #333333; margin: 0; }
+html[data-tema="pilates"] .tarifa-formatos em { font-family: var(--titulos); font-size: 1.1em; }
+
+html[data-tema="pilates"] .primera-vez { background: var(--pergamino); border: 1px solid var(--taupe); border-radius: 28px; padding: 32px; margin-top: 36px; max-width: 560px; }
+html[data-tema="pilates"] .primera-vez ol { list-style: none; counter-reset: pv; margin: 0; padding: 0; display: grid; gap: 14px; }
+html[data-tema="pilates"] .primera-vez li { counter-increment: pv; position: relative; padding-left: 40px; color: #333333; }
+html[data-tema="pilates"] .primera-vez li::before { content: counter(pv); position: absolute; left: 0; top: 0; width: 26px; height: 26px; display: grid; place-items: center; border: 1.5px solid var(--sello); border-radius: 50%; color: var(--sello); font: 600 0.8rem/1 var(--texto); }
+html[data-tema="pilates"] .primera-vez b { color: var(--tinta); font-weight: 600; }
+
+html[data-tema="pilates"] .antes-clase { list-style: none; margin: 40px 0 0; padding: 0; display: grid; gap: 0; max-width: 460px; }
+html[data-tema="pilates"] .antes-clase li { padding: 16px 0 16px 34px; position: relative; border-top: 1px solid var(--taupe); color: #333333; }
+html[data-tema="pilates"] .antes-clase li:last-child { border-bottom: 1px solid var(--taupe); }
+html[data-tema="pilates"] .antes-clase li::before { content: ''; position: absolute; left: 4px; top: 22px; width: 8px; height: 8px; border-radius: 50%; background: var(--sello); }
+html[data-tema="pilates"] .antes-clase b { color: var(--tinta); font-weight: 600; }
+
+html[data-tema="pilates"] .referidos { background: var(--pergamino); border: 1px solid var(--taupe); border-radius: 28px; padding: 32px; margin-top: 32px; max-width: 520px; }
+html[data-tema="pilates"] .referidos-etq { display: inline-block; margin-bottom: 14px; padding: 4px 12px; border: 1px solid var(--sello); border-radius: 999px; color: var(--sello); font: 600 0.75rem/1.2 var(--texto); letter-spacing: 0.05em; text-transform: none; }
+html[data-tema="pilates"] .referidos p { margin: 0; color: #333333; }
+html[data-tema="pilates"] .foto::after { background: linear-gradient(180deg, transparent 42%, rgba(30, 38, 34, 0.74)); }
+html[data-tema="pilates"] .foto figcaption { opacity: 1; z-index: 2; }
+html[data-tema="pilates"] .pv-dia b, html[data-tema="pilates"] .plan .precio small, html[data-tema="pilates"] .plan.destacado .precio small { color: var(--sello); }
+html[data-tema="pilates"] .pv-ahorro { color: var(--grafito); }
+
+/* ----- Mensajes que invitan a reservar (solo Pilates) ----- */
+html[data-tema="pilates"] .eyebrow { font-family: var(--texto); font-weight: 600; font-size: 0.78rem; letter-spacing: -0.02em; text-transform: none; color: var(--sello); margin: 0 0 14px; }
+html[data-tema="pilates"] .aviso-top { background: var(--relleno); color: var(--tinta); text-align: center; padding: 8px 16px; font-size: 0.9rem; letter-spacing: -0.023em; }
+html[data-tema="pilates"] .aviso-top a { color: var(--tinta); font-weight: 600; text-underline-offset: 3px; margin-left: 6px; }
+html[data-tema="pilates"] .portada { padding-top: 104px; }
+html[data-tema="pilates"] .menu a[href="#beneficios"], html[data-tema="pilates"] .menu a[href="#galeria"], html[data-tema="pilates"] .menu a[href="#inscribete"] { display: none; }
+html[data-tema="pilates"] .garantias-hero { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 22px 0 0; padding: 0; }
+html[data-tema="pilates"] .garantias-hero li { position: relative; padding-left: 22px; font-size: 0.95rem; color: rgba(243, 235, 232, 0.92); }
+html[data-tema="pilates"] .garantias-hero li::before { content: ''; position: absolute; left: 0; top: 0.35em; width: 12px; height: 7px; border-left: 2px solid var(--relleno); border-bottom: 2px solid var(--relleno); transform: rotate(-45deg); }
+
+html[data-tema="pilates"] .confianza { background: var(--menta-suave); border-bottom: 1px solid var(--taupe); }
+html[data-tema="pilates"] .confianza ul { list-style: none; margin: 0; padding: 28px 0; display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 760px) { html[data-tema="pilates"] .confianza ul { grid-template-columns: repeat(4, 1fr); gap: 0; } html[data-tema="pilates"] .confianza li + li { border-left: 1px solid var(--taupe); padding-left: 28px; } }
+html[data-tema="pilates"] .confianza b { display: block; font-family: var(--titulos); font-weight: 600; font-size: 1.35rem; color: var(--tinta); }
+html[data-tema="pilates"] .confianza span { font-size: 0.92rem; color: var(--grafito); }
+
+html[data-tema="pilates"] .clases { background: var(--pergamino); padding-block: clamp(72px, 9vw, 120px); }
+html[data-tema="pilates"] .formatos-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 900px) { html[data-tema="pilates"] .formatos-grid { grid-template-columns: repeat(3, 1fr); } }
+html[data-tema="pilates"] .formato { background: var(--papel); border: 1px solid var(--taupe); border-radius: 28px; padding: 36px 30px; }
+html[data-tema="pilates"] .formato-etq { display: inline-block; margin-bottom: 18px; padding: 4px 12px; border-radius: 999px; background: var(--azul); color: var(--tinta); font: 600 0.75rem/1.2 var(--texto); letter-spacing: 0.05em; text-transform: none; }
+html[data-tema="pilates"] .formato h3 { font-size: 1.9rem; margin-bottom: 10px; }
+html[data-tema="pilates"] .formato p { margin: 0; color: #4a4c48; }
+html[data-tema="pilates"] .modalidades { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 40px; border-top: 1px solid var(--taupe); }
+@media (min-width: 900px) { html[data-tema="pilates"] .modalidades { grid-template-columns: repeat(3, 1fr); } html[data-tema="pilates"] .modalidades > div + div { border-left: 1px solid var(--taupe); padding-left: 32px; } }
+html[data-tema="pilates"] .modalidades > div { padding: 28px 24px 8px 0; }
+html[data-tema="pilates"] .modalidades b { display: block; font-family: var(--titulos); font-weight: 600; font-size: 1.6rem; color: var(--tinta); margin-bottom: 6px; }
+html[data-tema="pilates"] .modalidades span { color: #4a4c48; }
+html[data-tema="pilates"] .para-quien { margin-top: 48px; background: var(--azul-suave); border-radius: 28px; padding: 40px 36px; }
+html[data-tema="pilates"] .para-quien h3 { font-size: 2rem; margin-bottom: 18px; }
+html[data-tema="pilates"] .para-quien ul { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: 1fr; gap: 14px 40px; }
+@media (min-width: 800px) { html[data-tema="pilates"] .para-quien ul { grid-template-columns: 1fr 1fr; } }
+html[data-tema="pilates"] .para-quien li { position: relative; padding-left: 22px; color: #4a4c48; }
+html[data-tema="pilates"] .para-quien li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 8px; height: 8px; border-radius: 50%; background: var(--relleno); }
+html[data-tema="pilates"] .para-quien b { color: var(--tinta); font-weight: 600; }
+html[data-tema="pilates"] .para-quien p { margin: 0; font-weight: 600; color: var(--tinta); }
+
+html[data-tema="pilates"] .preguntas { background: var(--pergamino); padding-block: clamp(72px, 9vw, 120px); }
+html[data-tema="pilates"] .faq-lista { max-width: 860px; border-top: 1px solid var(--taupe); }
+html[data-tema="pilates"] .faq-lista details { border-bottom: 1px solid var(--taupe); }
+html[data-tema="pilates"] .faq-lista summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 4px; font-family: var(--titulos); font-weight: 600; font-size: 1.45rem; color: var(--tinta); }
+html[data-tema="pilates"] .faq-lista summary::-webkit-details-marker { display: none; }
+html[data-tema="pilates"] .faq-lista summary::after { content: '+'; flex: none; width: 34px; height: 34px; display: grid; place-items: center; border: 1.5px solid var(--sello); border-radius: 50%; color: var(--sello); font: 400 1.3rem/1 var(--texto); transition: transform 0.2s ease, background 0.2s ease; }
+html[data-tema="pilates"] .faq-lista details[open] summary::after { content: '–'; background: var(--relleno); border-color: var(--relleno); color: var(--tinta); }
+html[data-tema="pilates"] .faq-lista summary:hover { color: var(--sello); }
+html[data-tema="pilates"] .faq-lista details p { margin: 0 0 24px; padding: 0 56px 0 4px; max-width: 70ch; color: #4a4c48; }
+
+html[data-tema="pilates"] .reserva-cta { background: var(--relleno); color: var(--tinta); text-align: center; padding-block: clamp(64px, 8vw, 104px); }
+html[data-tema="pilates"] .reserva-cta h2 { font-size: clamp(2.4rem, 5.4vw, 4rem); max-width: 18ch; margin: 0 auto 16px; color: var(--tinta); }
+html[data-tema="pilates"] .reserva-cta p { max-width: 56ch; margin: 0 auto 28px; font-size: 1.12rem; font-weight: 300; color: #2e302c; }
+html[data-tema="pilates"] .reserva-cta .acciones { justify-content: center; }
+html[data-tema="pilates"] .reserva-cta .btn-amarillo { background: var(--tinta); border-color: var(--tinta); color: var(--pergamino); }
+html[data-tema="pilates"] .reserva-cta .btn-amarillo:hover { background: #1f2a24; border-color: #1f2a24; color: var(--pergamino); }
+html[data-tema="pilates"] .reserva-cta .btn-borde { color: var(--tinta); border-color: var(--tinta); }
+html[data-tema="pilates"] .reserva-cta .btn-borde:hover { background: rgba(46, 48, 44, 0.08); color: var(--tinta); border-color: var(--tinta); }
+html[data-tema="pilates"] .reserva-cta .rojo-texto { color: inherit; }
+html[data-tema="pilates"] .confianza { padding-block: 0; }
+html[data-tema="pilates"] .confianza ul { padding: 26px 0; }
+
+
+/* ==========================================================
+   Recetas tipográficas (guía «hardware como teatro»): SF Pro Display 600 con interletrado negativo en los titulares
+   y SF Pro Text 400 a 17px en el texto. Si no hay SF Pro, Inter hace de sustituta.
+   Énfasis de dos tonos: la frase clave va en gris en vez de cursiva.
+   ========================================================== */
+html[data-tema="pilates"] body { font-family: var(--texto); font-size: 17px; line-height: 1.47; font-weight: 400; letter-spacing: -0.022em; color: #4a4c48; }
+html[data-tema="pilates"] h1, html[data-tema="pilates"] h2, html[data-tema="pilates"] h3 { font-family: var(--titulos); font-weight: 600; letter-spacing: -0.009em; line-height: 1.1; text-transform: none; color: var(--tinta); }
+html[data-tema="pilates"] .portada h1 { font-size: clamp(3rem, 7.2vw, 5rem); line-height: 1.05; letter-spacing: -0.015em; font-weight: 600; color: var(--pergamino); }
+html[data-tema="pilates"] .portada h1 em { font-style: normal; font-weight: 600; color: rgba(243, 235, 232, 0.6); -webkit-text-fill-color: rgba(243, 235, 232, 0.6); }
+html[data-tema="pilates"] .seccion-titulo { font-size: clamp(2.2rem, 4.6vw, 3.5rem); line-height: 1.07; letter-spacing: -0.005em; font-weight: 600; margin-bottom: 18px; }
+html[data-tema="pilates"] .rojo-texto, html[data-tema="pilates"] .amarillo-texto, html[data-tema="pilates"] .sobre-amarillo { font-style: normal; font-weight: 600; color: #86868b; -webkit-text-fill-color: #86868b; }
+html[data-tema="pilates"] .reserva-cta h2 { font-size: clamp(2.6rem, 7vw, 6rem); line-height: 1.04; letter-spacing: -0.015em; max-width: 14ch; }
+html[data-tema="pilates"] .reserva-cta .rojo-texto { color: rgba(46, 48, 44, 0.55); -webkit-text-fill-color: rgba(46, 48, 44, 0.55); }
+html[data-tema="pilates"] .kicker, html[data-tema="pilates"] .eyebrow { font-family: var(--titulos); font-weight: 600; font-size: 1.3125rem; line-height: 1; letter-spacing: 0.011em; text-transform: none; color: var(--grafito); margin: 0 0 20px; gap: 10px; }
+html[data-tema="pilates"] .kicker span { color: inherit; font-weight: 600; letter-spacing: 0.011em; }
+html[data-tema="pilates"] .seccion-sub { font-family: var(--titulos); font-weight: 600; font-size: 1.3125rem; line-height: 1.381; letter-spacing: 0.011em; color: #86868b; max-width: 40ch; margin-bottom: 56px; }
+html[data-tema="pilates"] .portada-bajada { font-family: var(--titulos); font-weight: 600; font-size: 1.3125rem; line-height: 1.381; letter-spacing: 0.011em; color: rgba(243, 235, 232, 0.62); max-width: 40ch; }
+html[data-tema="pilates"] .portada .etiqueta { border: 0; padding: 0; background: none; font: 600 1.3125rem/1 var(--titulos); letter-spacing: 0.011em; color: var(--pergamino); margin-bottom: 20px; }
+html[data-tema="pilates"] .marca span { font-family: var(--titulos); font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em; }
+html[data-tema="pilates"] .menu a { font-size: 0.9rem; letter-spacing: -0.016em; font-weight: 400; }
+
+/* Tarjetas y títulos de tarjeta: 28px / 600 */
+html[data-tema="pilates"] .plan h3 { font-family: var(--titulos); font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.022em; color: var(--grafito); }
+html[data-tema="pilates"] .beneficio h3, html[data-tema="pilates"] .formato h3, html[data-tema="pilates"] .tarifa-col h3, html[data-tema="pilates"] .primera-vez h3, html[data-tema="pilates"] .referidos h3, html[data-tema="pilates"] .para-quien h3, html[data-tema="pilates"] .form-cabecera h3 { font-size: 1.75rem; line-height: 1.143; letter-spacing: 0.007em; font-weight: 600; }
+html[data-tema="pilates"] .plan .precio { font-size: 3rem; line-height: 1.08; font-weight: 600; letter-spacing: -0.003em; }
+html[data-tema="pilates"] .plan .precio small { font-size: 1.5rem; margin-top: 0.4rem; }
+html[data-tema="pilates"] .cifras strong { font-size: 3rem; line-height: 1.08; letter-spacing: -0.003em; font-weight: 600; }
+html[data-tema="pilates"] .confianza b, html[data-tema="pilates"] .modalidades b { font-size: 1.3125rem; letter-spacing: 0.011em; font-weight: 600; }
+html[data-tema="pilates"] .horarios dd { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.005em; }
+html[data-tema="pilates"] .tarifa-col li b { font-size: 1.1rem; font-weight: 600; }
+html[data-tema="pilates"] .faq-lista summary { font-size: 1.3125rem; font-weight: 600; letter-spacing: 0.011em; }
+html[data-tema="pilates"] .faq-lista details p, html[data-tema="pilates"] .formato p, html[data-tema="pilates"] .beneficio p { font-size: 1.0625rem; line-height: 1.47; }
+html[data-tema="pilates"] .plan-opcion-caja strong { font-weight: 600; }
+html[data-tema="pilates"] .pasos .paso-num { font-weight: 600; }
+
+/* Controles: píldoras de 44px */
+html[data-tema="pilates"] .btn { font-family: var(--texto); font-size: 1.0625rem; font-weight: 400; letter-spacing: -0.022em; line-height: 1.176; border-radius: 980px; padding: 11px 21px; min-height: 44px; }
+html[data-tema="pilates"] .btn-chico { min-height: 36px; padding: 6px 16px; font-size: 0.875rem; }
+html[data-tema="pilates"] .btn-grande, html[data-tema="pilates"] .btn-grande-cta { min-height: 48px; padding: 12px 26px; }
+html[data-tema="pilates"] input, html[data-tema="pilates"] select, html[data-tema="pilates"] textarea { font-family: var(--texto); font-size: 1.0625rem; letter-spacing: -0.022em; }
+
+/* Portada: texto anclado abajo y una bandeja oscura con los precios de entrada */
+html[data-tema="pilates"] .portada { align-items: end; }
+html[data-tema="pilates"] .portada-grid { padding-bottom: 72px; }
+@media (min-width: 1000px) { html[data-tema="pilates"] .portada-grid { grid-template-columns: 1fr auto; align-items: end; gap: 56px; } }
+html[data-tema="pilates"] .plato { display: none; background: rgba(18, 18, 18, 0.8); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border-radius: 28px; padding: 22px 24px; min-width: 300px; color: #f5f5f7; }
+@media (min-width: 1000px) { html[data-tema="pilates"] .plato { display: grid; gap: 14px; } }
+html[data-tema="pilates"] .plato-precios { display: grid; gap: 6px; font-size: 0.875rem; line-height: 1.286; letter-spacing: -0.016em; color: #86868b; }
+html[data-tema="pilates"] .plato-precios b { color: #f5f5f7; font-weight: 600; }
+html[data-tema="pilates"] .plato .btn { width: 100%; }
+
+html[data-tema="pilates"] .cifras { display: none; }
+html[data-tema="pilates"] .portada-grid { padding-bottom: 64px; }
+html[data-tema="pilates"] .portada-bajada { margin-bottom: 28px; }
+html[data-tema="pilates"] .garantias-hero { margin-top: 24px; }
+html[data-tema="pilates"] .tarifa-formatos em, html[data-tema="pilates"] em { font-style: normal; font-weight: 600; color: var(--tinta); }
+html[data-tema="pilates"] .plan-opcion-caja, html[data-tema="pilates"] .plan-opcion-caja * { text-transform: none; letter-spacing: -0.016em; }
+html[data-tema="pilates"] .plan-opcion-caja strong { font-size: 1rem; }

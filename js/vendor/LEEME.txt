@@ -1,0 +1,17 @@
+Librerías de terceros, copiadas sin modificar desde npm (npm verificó su integridad al descargarlas).
+Se guardan aquí para que la demo funcione sin internet y sin paso de compilación.
+
+qrcode.js
+  Paquete: qrcode-generator 2.0.4 (archivo dist/qrcode.js)
+  Autor: Kazuhiko Arase. Licencia MIT (el aviso de copyright está al inicio del archivo).
+  SHA-256: 79ec86f82856005b1c887905cfccfcfbec3821ca61c7fd5a952faa5f778f791c
+  Uso: dibuja el QR del carnet en "Mi plan" (a través de js/qr.js).
+
+jsQR.js
+  Paquete: jsqr 1.4.0 (archivo dist/jsQR.js)
+  Autor: Cosmo Wolfe. Licencia Apache 2.0 (texto completo en jsQR-LICENSE.txt).
+  SHA-256: bc40c8a15196236b2314db0856f72ca0b49980cd5413b8c852a7349f5fee0859
+  Uso: lee el QR con la cámara en el Check-in del panel cuando el navegador no trae
+  lector propio (iPhone, iPad, Chrome y Edge de Windows). Se carga solo al abrir la cámara.
+
+"QR Code" es una marca registrada de DENSO WAVE INCORPORATED.

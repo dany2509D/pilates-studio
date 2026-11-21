@@ -1,0 +1,2 @@
+/* familia SF Pro cuando el dispositivo la tiene (Apple) y, si no, Inter (SIL Open Font License 1.1). Fuente variable; solo se descarga si se usa ese tema. */
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('../assets/fonts/inter-latin.woff2') format('woff2'); }

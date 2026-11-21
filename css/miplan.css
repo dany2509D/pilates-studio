@@ -1,0 +1,124 @@
+/* ===== "Mi plan" (socio.html): sesión guardada, instalar como app, QR que cambia, pase diario,
+   pagos con comprobante y "Mis datos". Lo del carnet que ya existía sigue en site.css y efectos.css. ===== */
+
+/* Con la sesión abierta, el carnet sube (el QR se muestra en recepción): menos aire arriba y sin el subtítulo. */
+.miplan-dentro .socio-pagina { padding-top: 28px; }
+.miplan-dentro .socio-pagina .seccion-titulo { font-size: clamp(2.2rem, 8vw, 3.2rem); margin-bottom: 14px; }
+.socio-tarjeta h2:focus { outline: none; box-shadow: none; }
+/* Repintada con datos nuevos (el estudio confirmó un pago, atendió una solicitud…): sin la animación de entrada. */
+.socio-tarjeta.repintada { animation: none; }
+.miplan-dentro #socio-sub { display: none; }
+#socio-resultado { padding: 0; scroll-margin-top: 88px; }
+#miplan-aviso { margin-bottom: 18px; }
+/* Mensajes que reciben el foco por código (tabindex=-1): sin el recuadro del foco de site.css. */
+#miplan-aviso:focus, #socio-pagado:focus, #derecho-msg:focus { outline: none; box-shadow: none; }
+
+/* Llegada por el QR impreso del estudio */
+.miplan-bienvenida { display: flex; gap: 14px; align-items: flex-start; margin: -8px 0 18px; padding: 14px 16px; border-radius: 12px; background: rgba(34, 211, 238, 0.08); border-left: 4px solid var(--amarillo); }
+.miplan-bienvenida svg { flex: none; width: 30px; height: 30px; color: var(--amarillo); margin-top: 2px; }
+.miplan-bienvenida p { margin: 0; color: #e6e6e6; line-height: 1.45; }
+
+/* Sesión guardada en el celular */
+.miplan-sesion { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding: 10px 12px; background: #151515; border: 1px solid #2a2a2a; border-radius: 12px; }
+.miplan-sesion p { flex: 1 1 auto; margin: 0; color: #cfcfcf; font-size: 0.86rem; line-height: 1.35; }
+.miplan-sesion .btn { flex: none; min-height: 40px; padding: 4px 12px; font-size: 0.95rem; }
+
+/* Instalar "Mi plan" como app */
+.miplan-instalar { display: grid; grid-template-columns: auto 1fr auto; gap: 10px 12px; align-items: center; margin-bottom: 12px; padding: 12px 14px; border-radius: 12px; background: linear-gradient(135deg, rgba(47, 107, 255, 0.18), rgba(34, 211, 238, 0.06)), #141414; border: 1px solid rgba(34, 211, 238, 0.4); }
+.miplan-instalar img { width: 44px; height: 44px; border-radius: 10px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12); }
+.miplan-instalar strong { display: block; font-family: var(--titulos); font-weight: 800; font-size: 1.12rem; line-height: 1.1; letter-spacing: 0.03em; text-transform: uppercase; color: var(--amarillo); }
+.miplan-instalar p { margin: 2px 0 0; color: #d6d6d6; font-size: 0.86rem; line-height: 1.35; }
+.miplan-instalar .btn { min-height: 42px; }
+@media (max-width: 480px) {
+  .miplan-instalar { grid-template-columns: auto 1fr; }
+  .miplan-instalar .btn { grid-column: 1 / -1; width: 100%; }
+}
+
+/* Cuenta regresiva del QR personal (cambia cada 15 s). Sin "reducir movimiento", la barra baja suave. */
+.qr-cuenta { display: flex; align-items: center; gap: 10px; color: #d6d6d6; font-size: 0.92rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.qr-cuenta-barra { flex: 0 1 150px; height: 6px; border-radius: 4px; background: #2e2e2e; overflow: hidden; }
+.qr-cuenta-barra i { display: block; height: 100%; width: 100%; background: var(--amarillo); border-radius: 4px; transition: width 1s linear; }
+@media (max-width: 520px) { .qr-cuenta { justify-content: center; } }
+@media (prefers-reduced-motion: reduce) { .qr-cuenta-barra i { transition: none; } }
+
+/* Pestañas "Pase de hoy" / "Mi QR personal" */
+.pase-zona { display: grid; gap: 12px; }
+.pase-pestanas { display: flex; gap: 4px; padding: 4px; background: #0f0f0f; border: 1px solid #2c2c2c; border-radius: 999px; }
+.pase-pestanas [role="tab"] { flex: 1 1 0; min-height: 44px; padding: 6px 10px; border: 0; border-radius: 999px; background: transparent; color: #cfcfcf; cursor: pointer;
+  font-family: var(--titulos); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.15s ease, color 0.15s ease; }
+.pase-pestanas [role="tab"]:hover { color: #fff; background: #1f1f1f; }
+.pase-pestanas [role="tab"][aria-selected="true"] { background: var(--amarillo); color: #111; }
+.pase-pestanas [role="tab"]:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+/* Pase diario de un solo uso: un "ticket" con borde punteado amarillo */
+.pase-diario { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; padding: 16px; border-radius: 14px; background: rgba(34, 211, 238, 0.07); border: 2px dashed var(--amarillo); }
+.pase-qr { width: 184px; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 14px 34px rgba(0, 0, 0, 0.55); }
+.pase-qr canvas { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+.pase-diario-txt { display: grid; gap: 6px; min-width: 0; }
+.pase-diario-txt p { margin: 0; line-height: 1.35; }
+.pase-diario-tit { margin: 0; font-family: var(--titulos); font-weight: 800; font-size: 1.35rem; line-height: 1.1; letter-spacing: 0.03em; text-transform: uppercase; color: var(--amarillo); }
+.pase-codigo { font-family: ui-monospace, 'Cascadia Mono', Consolas, 'Courier New', monospace; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; overflow-wrap: anywhere; }
+.pase-diario.usado { grid-template-columns: 1fr; gap: 4px; background: rgba(255, 255, 255, 0.03); border: 1px solid #333; }
+.pase-diario.usado .pase-diario-tit { color: #9a9a9a; font-size: 1.1rem; }
+.pase-usado-txt { margin: 0; color: #a8a8a8; font-weight: 700; }
+.pase-nota { margin: 0; padding: 10px 14px; border-radius: 8px; background: rgba(255, 255, 255, 0.04); border-left: 4px solid var(--amarillo); color: #dcdcdc; line-height: 1.4; }
+@media (max-width: 520px) {
+  .pase-diario { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .pase-qr { width: min(248px, 100%); }
+}
+
+/* Renovar: aviso del plan diario y confirmación del pago */
+.miplan-nota-diario { margin-top: -4px; }
+
+/* Mis pagos, con su comprobante: fecha y plan | monto, y debajo número y método | botón */
+.pagos-lista { list-style: none; margin: 0; padding: 0; }
+.pago-fila { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 12px; padding: 12px 0; border-top: 1px solid #2a2a2a; }
+.pago-fila[hidden] { display: none; }
+.pago-tit { min-width: 0; }
+.pago-sub { min-width: 0; color: #b4b4b4; line-height: 1.35; }
+.pago-monto { justify-self: end; font-family: var(--titulos); font-weight: 800; font-size: 1.45rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.pago-fila .btn { justify-self: end; padding: 4px 12px; font-size: 0.92rem; letter-spacing: 0.05em; }
+.pagos-todos { justify-self: start; }
+
+/* Mis datos (Ley 81 de 2019) */
+.miplan-datos { margin-top: 18px; background: #121212; border: 1px solid #2a2a2a; border-radius: 14px; overflow: hidden; }
+.miplan-datos summary { position: relative; display: grid; gap: 2px; padding: 18px 56px 18px 20px; cursor: pointer; list-style: none; }
+.miplan-datos summary::-webkit-details-marker { display: none; }
+.miplan-datos summary::after { content: ''; position: absolute; right: 22px; top: 50%; width: 12px; height: 12px; margin-top: -9px; border-right: 3px solid var(--amarillo); border-bottom: 3px solid var(--amarillo); transform: rotate(45deg); transition: transform 0.2s ease; }
+.miplan-datos[open] summary::after { transform: rotate(-135deg); margin-top: -3px; }
+.miplan-datos summary:hover { background: #171717; }
+.miplan-datos summary:focus-visible { outline-offset: -4px; }
+.miplan-datos-tit { font-family: var(--titulos); font-weight: 800; font-size: 1.6rem; line-height: 1.05; letter-spacing: 0.02em; text-transform: uppercase; color: var(--amarillo); }
+.miplan-datos-sub { color: #b4b4b4; font-size: 0.92rem; line-height: 1.4; }
+.miplan-datos-cuerpo { display: grid; gap: 14px; padding: 4px 20px 22px; }
+.miplan-datos h4 { margin: 6px 0 0; font-family: var(--titulos); font-weight: 700; font-size: 1.2rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gris); }
+.datos-lista { margin: 0; display: grid; }
+.datos-lista > div { display: grid; grid-template-columns: minmax(100px, 36%) 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid #232323; }
+.datos-lista dt { color: #b4b4b4; font-size: 0.9rem; }
+.datos-lista dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.datos-lista .vacio { font-weight: 400; }
+.datos-nota { margin: 0; color: #d0d0d0; line-height: 1.45; }
+.datos-acciones { display: flex; flex-wrap: wrap; gap: 8px; }
+.datos-acciones .btn { flex: 1 1 210px; }
+.datos-caja { display: grid; gap: 12px; padding: 14px; border-radius: 10px; background: #1a1a1a; }
+.datos-caja p { margin: 0; line-height: 1.45; }
+.datos-confirmar { background: rgba(209, 10, 10, 0.12); border-left: 4px solid var(--peligro); }
+.datos-botones { display: flex; flex-wrap: wrap; gap: 8px; }
+.datos-botones .btn { flex: 1 1 150px; }
+.socio-pagina textarea { width: 100%; min-height: 96px; padding: 10px 14px; font: inherit; font-weight: 400; color: var(--blanco); background: #232323; border: 2px solid #363636; border-radius: 8px; resize: vertical; }
+.socio-pagina textarea::placeholder { color: #8a8a8a; }
+.socio-pagina textarea:focus { border-color: var(--amarillo); outline: none; box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.25); }
+.mensaje.nota { display: block; background: rgba(255, 255, 255, 0.06); color: #e0e0e0; border-left: 4px solid #8a8a8a; }
+.derechos-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.derechos-lista li { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 12px 14px; border-radius: 10px; background: #1a1a1a; }
+.derecho-info { display: grid; gap: 2px; min-width: 0; }
+.derecho-info small { color: #b4b4b4; }
+.derecho-detalle { overflow-wrap: anywhere; }
+.derecho-respuesta { margin: 6px 0 0; color: #dcdcdc; font-size: 0.95rem; line-height: 1.4; overflow-wrap: anywhere; }
+.datos-pie { margin: 0; }
+.datos-pie a, footer .acceso a { color: var(--amarillo); }
+@media (max-width: 420px) {
+  .miplan-datos summary { padding-left: 16px; }
+  .miplan-datos-cuerpo { padding-inline: 16px; }
+}
+@media (max-width: 340px) { .datos-lista > div { grid-template-columns: 1fr; gap: 2px; } }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Páginas públicas. "Mi plan" (socio.html) y el panel (admin.html) llevan noindex y no van aquí. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://tu-dominio.com/</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://tu-dominio.com/privacidad.html</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+</urlset>

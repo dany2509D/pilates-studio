@@ -1,0 +1,5 @@
+{
+  "framework": null,
+  "buildCommand": "mkdir -p dist && cp -r index.html admin.html socio.html 404.html privacidad.html robots.txt sitemap.xml manifest.webmanifest sw.js css js assets dist/",
+  "outputDirectory": "dist"
+}

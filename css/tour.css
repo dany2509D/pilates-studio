@@ -1,0 +1,108 @@
+/* Tutorial guiado ("primer nivel"). Capa por encima de todo; deja pasar los clics al elemento iluminado. */
+.tour-raiz { position: fixed; inset: 0; z-index: 500; pointer-events: none; font-family: var(--texto, 'Barlow', system-ui, sans-serif); }
+.tour-velo { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.76); }
+.tour-foco {
+  position: absolute; border-radius: 12px; pointer-events: none;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.76);
+  outline: 3px solid #22d3ee; outline-offset: 3px; animation: tourLatido 1.4s ease-in-out infinite;
+}
+@keyframes tourLatido { 0%, 100% { outline-offset: 3px; outline-color: #22d3ee; } 50% { outline-offset: 11px; outline-color: rgba(34, 211, 238, 0.35); } }
+
+.tour-cursor { position: absolute; width: 36px; height: 36px; margin: -4px 0 0 -6px; pointer-events: none; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.65)); transition: left 0.2s ease, top 0.2s ease; }
+.tour-raiz[data-modo="demo"] .tour-cursor { transition: left 0.95s cubic-bezier(0.4, 0, 0.2, 1), top 0.95s cubic-bezier(0.4, 0, 0.2, 1); }
+.tour-cursor svg { width: 100%; height: 100%; fill: #fff; stroke: #111; stroke-width: 1.4; stroke-linejoin: round; }
+.tour-raiz[data-modo="jugar"] .tour-cursor svg { animation: tourBob 1s ease-in-out infinite; }
+@keyframes tourBob { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-8px, -8px); } }
+.tour-onda { position: absolute; left: 4px; top: 2px; width: 26px; height: 26px; border: 3px solid #22d3ee; border-radius: 50%; opacity: 0; }
+.tour-onda-on { animation: tourOnda 0.55s ease-out; }
+@keyframes tourOnda { from { opacity: 0.95; transform: scale(0.3); } to { opacity: 0; transform: scale(2.4); } }
+
+.tour-burbuja {
+  position: absolute; left: 50%; transform: translateX(-50%); pointer-events: auto;
+  width: min(520px, calc(100% - 24px)); padding: 16px 18px 12px;
+  background: #121212; color: #fff; border: 1px solid #2a2a2a; border-top: 8px solid #22d3ee; border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+.tour-burbuja[data-lugar="abajo"] { bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
+.tour-burbuja[data-lugar="arriba"] { top: 14px; }
+.tour-burbuja[data-lugar="centro"] { top: 50%; transform: translate(-50%, -50%); }
+.tour-sacude { animation: tourSacude 0.35s ease; }
+@keyframes tourSacude { 0%, 100% { translate: 0 0; } 25% { translate: -7px 0; } 75% { translate: 7px 0; } }
+
+.tour-cab { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.tour-nivel { font-family: var(--titulos, 'Barlow Condensed', Impact, sans-serif); font-weight: 700; font-size: 1rem; letter-spacing: 0.16em; text-transform: uppercase; color: #22d3ee; }
+.tour-estrellas { display: inline-flex; align-items: center; gap: 4px; font-weight: 700; }
+.tour-estrellas svg { width: 20px; height: 20px; fill: #22d3ee; }
+.tour-barra { height: 6px; border-radius: 99px; background: #2a2a2a; overflow: hidden; }
+.tour-barra i { display: block; height: 100%; background: #22d3ee; border-radius: 99px; transition: width 0.4s ease; }
+.tour-titulo { margin: 12px 0 4px; font-family: var(--titulos, 'Barlow Condensed', Impact, sans-serif); font-weight: 800; font-size: 1.7rem; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1; }
+.tour-raiz[data-tipo="inicio"] .tour-titulo, .tour-raiz[data-tipo="fin"] .tour-titulo { font-size: 2.5rem; }
+.tour-texto { margin: 0; color: #d6d6d6; font-size: 1.02rem; line-height: 1.45; }
+.tour-acciones { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.tour-acciones:empty { display: none; }
+.tour-acciones .btn { min-height: 46px; }
+.tour-grandes { display: flex; justify-content: center; gap: 8px; margin: 12px 0 2px; }
+.tour-grandes svg { width: 50px; height: 50px; fill: #22d3ee; animation: tourPop 0.5s both; }
+.tour-grandes svg:nth-child(2) { animation-delay: 0.15s; }
+.tour-grandes svg:nth-child(3) { animation-delay: 0.3s; }
+@keyframes tourPop { from { opacity: 0; transform: scale(0.2) rotate(-30deg); } to { opacity: 1; transform: none; } }
+.tour-salir { display: block; margin: 6px 0 0 auto; padding: 6px 4px; min-height: 32px; background: none; border: 0; color: #9a9a9a; font: inherit; font-size: 0.9rem; text-decoration: underline; cursor: pointer; }
+.tour-salir:hover { color: #fff; }
+
+.tour-fab {
+  position: fixed; left: 16px; bottom: 16px; z-index: 250; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px 0 14px;
+  border: 0; border-radius: 999px; background: #22d3ee; color: #111; cursor: pointer;
+  font-family: var(--titulos, 'Barlow Condensed', Impact, sans-serif); font-weight: 800; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); animation: tourFab 2.4s ease-in-out infinite;
+}
+.tour-fab svg { width: 20px; height: 20px; fill: currentColor; }
+.tour-fab:hover { background: #67e8f9; }
+@keyframes tourFab { 0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 0 rgba(34, 211, 238, 0.55); } 50% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 12px rgba(34, 211, 238, 0); } }
+/* En el panel con la sesión abierta, admin.css lo sube sobre la barra inferior (o lo corre junto al menú lateral).
+   En el acceso no hay barra: queda en la esquina, y .login deja aire abajo para que no tape sus botones. */
+@media (min-width: 900px) { body.admin .tour-fab { bottom: 20px; } }
+
+/* Pantalla táctil, jugando: un círculo que late marca dónde tocar (en vez de la flecha del ratón). */
+.tour-raiz[data-tactil="1"][data-modo="jugar"] .tour-cursor { width: 56px; height: 56px; margin: -28px 0 0 -28px; }
+.tour-raiz[data-tactil="1"][data-modo="jugar"] .tour-cursor svg { display: none; }
+.tour-raiz[data-tactil="1"][data-modo="jugar"] .tour-cursor::before {
+  content: ''; position: absolute; inset: 0; border-radius: 50%; background: rgba(34, 211, 238, 0.35); border: 3px solid #22d3ee;
+  animation: tourToca 1.2s ease-out infinite;
+}
+@keyframes tourToca { 0% { transform: scale(0.45); opacity: 1; } 100% { transform: scale(1.15); opacity: 0.1; } }
+
+/* ----- Celular: burbuja compacta, botones a todo el ancho, "Saltar" como píldora en la esquina ----- */
+@media (max-width: 640px) {
+  .tour-burbuja { width: calc(100% - 16px); padding: 12px 14px 10px; border-top-width: 6px; border-radius: 12px; max-height: 50vh; max-height: 50dvh; overflow-y: auto; }
+  .tour-burbuja[data-lugar="abajo"] { bottom: calc(8px + env(safe-area-inset-bottom, 0px)); }
+  .tour-burbuja[data-lugar="arriba"] { top: 8px; }
+  .tour-burbuja[data-lugar="centro"] { max-height: calc(100% - 24px); }
+  .tour-cab { justify-content: flex-start; gap: 12px; padding-right: 92px; }
+  .tour-nivel { font-size: 0.85rem; letter-spacing: 0.1em; }
+  .tour-estrellas svg { width: 16px; height: 16px; }
+  .tour-titulo { margin: 8px 0 2px; font-size: 1.35rem; }
+  .tour-raiz[data-tipo="inicio"] .tour-titulo, .tour-raiz[data-tipo="fin"] .tour-titulo { font-size: 1.9rem; }
+  .tour-texto { font-size: 0.95rem; line-height: 1.4; }
+  .tour-acciones { margin-top: 10px; }
+  .tour-acciones .btn { flex: 1 1 100%; min-height: 48px; font-size: 1.1rem; }
+  .tour-salir { position: absolute; top: 8px; right: 8px; margin: 0; padding: 6px 12px; min-height: 36px; border-radius: 8px; background: #1f1f1f; font-size: 0.85rem; text-decoration: none; }
+  .tour-pc { display: none; }
+  .tour-grandes svg { width: 40px; height: 40px; }
+  .tour-fab { left: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); min-height: 44px; padding: 0 14px 0 10px; font-size: 1rem; }
+  /* "Mi plan" con la sesión abierta: el QR se muestra en recepción y sus botones van al centro. El botón queda
+     como un círculo con solo el ícono, en la esquina de abajo (sigue diciendo "Tutorial" al lector de pantalla).
+     Gana a la altura que efectos.css le da en la web para el «¡Inscríbete!» fijo, que aquí no existe. */
+  body.miplan-dentro #tour-fab { bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important; width: 44px; height: 44px; padding: 0; justify-content: center; }
+  body.miplan-dentro #tour-fab svg { width: 20px; height: 20px; }
+  body.miplan-dentro #tour-fab span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+/* Celular de lado: poco alto, se compacta aún más. */
+@media (max-height: 480px) {
+  .tour-burbuja { max-height: 58vh; padding: 8px 12px; }
+  .tour-titulo { font-size: 1.15rem; margin: 4px 0 0; }
+  .tour-texto { font-size: 0.88rem; }
+  .tour-acciones { margin-top: 6px; }
+  .tour-acciones .btn { min-height: 40px; }
+  .tour-grandes { display: none; }
+}

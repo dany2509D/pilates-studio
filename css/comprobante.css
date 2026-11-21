@@ -1,0 +1,44 @@
+/* Comprobante de pago (js/comprobante.js): ventana sobre la página y versión para imprimir o guardar PDF.
+   El comprobante es "de papel": fondo blanco y texto oscuro, también en pantalla. */
+.comp-modal { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 16px;
+  background: rgba(0, 0, 0, 0.72); overflow-y: auto; }
+.comp-ventana { width: min(440px, 100%); outline: none; display: grid; gap: 12px; margin: auto; }
+body.comp-abierto { overflow: hidden; }
+
+.comp { background: #fff; color: #161616; border-radius: 14px; padding: 20px 20px 16px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  font-family: var(--texto); font-size: 15px; line-height: 1.45; border-top: 6px solid var(--rojo-vivo); }
+.comp-cab { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; border-bottom: 1px dashed #c9c9c9; }
+.comp-cab img { width: 46px; height: 46px; object-fit: contain; flex: none; }
+.comp-cab strong { display: block; font-family: var(--titulos); font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; }
+.comp-cab small { display: block; color: #555; font-size: 0.8rem; }
+.comp h2 { color: #161616; font-size: 1.35rem; margin: 14px 0 2px; }
+.comp-numero { margin: 0 0 12px; color: #444; font-size: 0.9rem; }
+.comp-numero strong { color: #161616; font-variant-numeric: tabular-nums; }
+.comp-datos { margin: 0; display: grid; gap: 0; }
+.comp-datos > div { display: flex; justify-content: space-between; gap: 14px; padding: 7px 0; border-bottom: 1px solid #ececec; }
+.comp-datos dt { color: #5b5b5b; margin: 0; }
+.comp-datos dd { margin: 0; text-align: right; font-weight: 600; overflow-wrap: anywhere; }
+.comp-total { display: flex; justify-content: space-between; align-items: baseline; margin: 14px 0 6px; padding: 10px 12px;
+  background: #f4f4f4; border-radius: 10px; }
+.comp-total span { font-weight: 600; color: #333; }
+.comp-total strong { font-family: var(--titulos); font-size: 1.9rem; color: var(--rojo); line-height: 1; }
+.comp-nota { margin: 6px 0 0; font-size: 0.78rem; color: #666; text-align: center; }
+
+.comp-acciones { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.comp-acciones .btn { flex: 1 1 160px; }
+
+@media (max-width: 420px) {
+  .comp { padding: 16px 14px 12px; }
+  .comp-acciones .btn { flex-basis: 100%; }
+}
+
+/* Al imprimir: solo el comprobante, en blanco y negro, sin la ventana ni los botones. */
+@media print {
+  body.imprimiendo-comprobante { background: #fff !important; }
+  body.imprimiendo-comprobante > *:not(.comp-modal) { display: none !important; }
+  body.imprimiendo-comprobante .comp-modal { position: static; display: block; background: none; padding: 0; overflow: visible; }
+  body.imprimiendo-comprobante .comp-ventana { width: 100%; max-width: 480px; margin: 0 auto; }
+  body.imprimiendo-comprobante .comp { box-shadow: none; border: 1px solid #999; border-top: 6px solid #000; }
+  body.imprimiendo-comprobante .comp-acciones { display: none !important; }
+  body.imprimiendo-comprobante .comp-total strong { color: #000; }
+}

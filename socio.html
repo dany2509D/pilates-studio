@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es" data-tema="pilates">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi plan · Pilates Studio</title>
+  <meta name="description" content="Tu plan, tus pagos y tu pase de entrada de Pilates Studio.">
+  <meta name="theme-color" content="#1d4ed8">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/logo.png">
+  <!-- "Mi plan" se agrega a la pantalla de inicio como una app (manifest + sw.js). El manifest se enlaza solo en
+       http(s): abierto con doble clic (file://), el navegador no puede leerlo y lo marca como error en la consola. -->
+  <script>if (/^https?:$/.test(location.protocol)) document.head.insertAdjacentHTML('beforeend', '<link rel="manifest" href="manifest.webmanifest">');</script>
+  <link rel="apple-touch-icon" href="assets/iconos/apple-touch-icon-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mi plan">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <script src="js/tema.js"></script>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/efectos.css">
+  <link rel="stylesheet" href="css/comprobante.css">
+  <link rel="stylesheet" href="css/miplan.css">
+  <link rel="stylesheet" href="css/tour.css">
+  <link rel="stylesheet" href="css/pilates.css">
+</head>
+<body>
+  <div class="aviso-memoria" id="aviso-memoria">Tu navegador no permite guardar datos: la demo funciona, pero se borrará al cerrar la página.</div>
+
+  <header class="barra">
+    <div class="wrap">
+      <a class="marca" href="index.html"><img src="assets/logo.png" alt="Logo Pilates Studio"><span>Pilates Studio</span></a>
+      <a class="btn btn-borde btn-chico" href="index.html">← Volver a la web</a>
+    </div>
+  </header>
+
+  <main class="socio-pagina">
+    <div class="wrap socio-wrap">
+      <h1 class="seccion-titulo">Mi <span class="rojo-texto">plan</span></h1>
+      <p class="seccion-sub" id="socio-sub">Tu plan, tu pase de entrada y tus pagos, en tu celular.</p>
+
+      <div class="miplan-bienvenida" id="miplan-bienvenida" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></svg>
+        <p>Escaneaste el QR del estudio: entra una vez y tu sesión queda guardada. Después abre «Mi plan» desde el ícono en tu pantalla de inicio. En iPhone y iPad, la primera vez que abras el ícono entra otra vez con tu cédula.</p>
+      </div>
+
+      <p class="mensaje" id="miplan-aviso" role="status" tabindex="-1"></p>
+
+      <form class="inscripcion" id="socio-form" novalidate>
+        <label>Cédula<input name="cedula" autocomplete="off" required></label>
+        <label>Últimos 4 dígitos de tu teléfono<input name="ultimos4" inputmode="numeric" maxlength="4" autocomplete="off" required></label>
+        <div class="mensaje" id="socio-error" role="alert"></div>
+        <button class="btn btn-rojo" type="submit">Ver mi plan</button>
+      </form>
+
+      <div class="miplan-sesion" id="miplan-sesion" hidden>
+        <p id="miplan-sesion-texto">Tu sesión queda guardada en este celular. Si el celular no es tuyo, cierra sesión.</p>
+        <button type="button" class="btn btn-borde btn-chico" id="miplan-salir">Cerrar sesión</button>
+      </div>
+
+      <div class="miplan-instalar" id="miplan-instalar" hidden>
+        <img src="assets/iconos/icono-192.png" alt="" width="56" height="56">
+        <div>
+          <strong>Ten «Mi plan» como una app</strong>
+          <p id="miplan-instalar-texto">Agrégalo a tu pantalla de inicio y ábrelo con un toque, sin volver a escribir tus datos.</p>
+        </div>
+        <button type="button" class="btn btn-amarillo btn-chico" id="miplan-instalar-btn" hidden>Instalar Mi plan</button>
+      </div>
+
+      <section id="socio-resultado" hidden></section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="acceso">En la demo entras con tu cédula y los últimos 4 dígitos de tu teléfono. En la versión final, cada socio tiene su cuenta con contraseña.</p>
+      <p class="acceso"><a href="privacidad.html">Aviso de privacidad</a></p>
+    </div>
+  </footer>
+
+  <script src="js/util.js"></script>
+  <script src="js/seed.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/yappy.js"></script>
+  <script src="js/comprobante.js"></script>
+  <script src="js/vendor/qrcode.js"></script>
+  <script src="js/qr.js"></script>
+  <script src="js/socio.js"></script>
+  <script src="js/tour.js"></script>
+  <script>Tour.alCargar();</script>
+</body>
+</html>

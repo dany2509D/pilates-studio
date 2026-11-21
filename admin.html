@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es" data-tema="pilates">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestión · Pilates Studio</title>
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/logo.png">
+  <script src="js/tema.js"></script>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/checkin.css">
+  <link rel="stylesheet" href="css/ajustes.css">
+  <link rel="stylesheet" href="css/comprobante.css">
+  <link rel="stylesheet" href="css/tour.css">
+  <link rel="stylesheet" href="css/pilates-panel.css">
+</head>
+<body class="admin">
+  <div class="aviso-memoria" id="aviso-memoria">Este navegador no permite guardar datos: la demo funciona, pero se borrará al cerrar la página.</div>
+
+  <div id="login" class="login" hidden>
+    <form class="login-caja" id="login-form" novalidate>
+      <div class="hazard" aria-hidden="true"></div>
+      <img src="assets/logo.png" alt="Pilates Studio">
+      <h1>Panel de gestión</h1>
+      <p>Entra con tu usuario y tu contraseña.</p>
+      <div class="mensaje" id="login-aviso" role="status"></div>
+      <label>Usuario<input id="login-usuario" name="usuario" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required></label>
+      <label>Contraseña<input type="password" id="login-clave" name="clave" autocomplete="current-password" required></label>
+      <div class="mensaje" id="login-error" role="alert"></div>
+      <button class="btn btn-rojo" type="submit">Entrar</button>
+      <div class="login-demo">
+        <p>Demo: <span>dueño → <b>dueno</b> / <b>demo</b></span> · <span>recepción → <b>recepcion</b> / <b>recepcion</b></span></p>
+        <div class="login-rapido">
+          <button type="button" class="btn btn-borde btn-chico" data-demo="dueno">Entrar como dueño</button>
+          <button type="button" class="btn btn-borde btn-chico" data-demo="recepcion">Entrar como recepción</button>
+        </div>
+      </div>
+      <a class="volver" href="index.html">← Volver a la web</a>
+    </form>
+  </div>
+
+  <div id="app" class="app" hidden>
+    <aside class="lateral" id="lateral">
+      <a class="lateral-marca" href="index.html" title="Ver la web">
+        <img src="assets/logo.png" alt="Pilates Studio"><span>Pilates Studio</span>
+      </a>
+      <nav id="nav-lateral" aria-label="Secciones"></nav>
+      <div class="lateral-pie">
+        <div class="sesion-usuario">
+          <span class="avatar" id="usuario-avatar" aria-hidden="true">D</span>
+          <div><strong id="usuario-nombre">Dueño</strong><small id="usuario-rol">Dueño · Sesión abierta</small></div>
+        </div>
+        <button type="button" class="salir" id="btn-clave">Cambiar contraseña</button>
+        <button type="button" class="salir" id="btn-salir">Cerrar sesión</button>
+      </div>
+      <div class="hazard" aria-hidden="true"></div>
+    </aside>
+
+    <main class="contenido">
+      <header class="cabecera">
+        <div class="cabecera-txt">
+          <span class="fecha-hoy" id="fecha-hoy"></span>
+          <h1 id="titulo-pantalla"></h1>
+          <small class="sesion-movil" id="sesion-movil"></small>
+        </div>
+        <div class="cabecera-acciones">
+          <button type="button" class="btn btn-borde btn-chico btn-icono" id="btn-clave-movil" aria-label="Cambiar contraseña" title="Cambiar contraseña">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14.5 8.5l2.5 2.5"/></svg>
+          </button>
+          <button type="button" class="btn btn-borde btn-chico salir-movil" id="btn-salir-movil"><span class="txt-largo">Cerrar sesión</span><span class="txt-corto">Salir</span></button>
+        </div>
+      </header>
+      <div id="pantalla"></div>
+    </main>
+
+    <nav class="inferior" id="nav-inferior" aria-label="Secciones"></nav>
+  </div>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modal-texto">
+      <div class="modal-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 8v5M12 16.5v.01"/><circle cx="12" cy="12" r="9.5"/></svg></div>
+      <p id="modal-texto"></p>
+      <div class="modal-botones">
+        <button type="button" class="btn btn-borde" id="modal-no">Cancelar</button>
+        <button type="button" class="btn btn-rojo" id="modal-si">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-clave" class="modal" hidden>
+    <form class="modal-caja dlg-clave" id="clave-form" role="dialog" aria-modal="true" aria-labelledby="clave-titulo" aria-describedby="clave-quien" novalidate>
+      <h2 id="clave-titulo">Cambiar contraseña</h2>
+      <p class="vacio" id="clave-quien"></p>
+      <input type="text" id="clave-usuario" name="usuario" autocomplete="username" hidden>
+      <label>Contraseña actual<input type="password" id="clave-actual" name="actual" autocomplete="current-password" required></label>
+      <label>Contraseña nueva<input type="password" id="clave-nueva" name="nueva" autocomplete="new-password" minlength="6" required aria-describedby="clave-ayuda"></label>
+      <small class="vacio" id="clave-ayuda">Mínimo 6 caracteres.</small>
+      <label>Repite la contraseña nueva<input type="password" id="clave-repetir" name="repetir" autocomplete="new-password" required></label>
+      <div class="mensaje" id="clave-msg" role="alert"></div>
+      <div class="modal-botones">
+        <button type="button" class="btn btn-borde" id="clave-cancelar">Cancelar</button>
+        <button type="submit" class="btn btn-rojo">Guardar</button>
+      </div>
+    </form>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/util.js"></script>
+  <script src="js/seed.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/graficos.js"></script>
+  <script src="js/vendor/qrcode.js"></script>
+  <script src="js/qr.js"></script>
+  <script src="js/comprobante.js"></script>
+  <script src="js/admin-core.js"></script>
+  <script src="js/screens/inicio.js"></script>
+  <script src="js/screens/socios.js"></script>
+  <script src="js/screens/cobros.js"></script>
+  <script src="js/escaner.js"></script>
+  <script src="js/screens/checkin.js"></script>
+  <script src="js/screens/cafeteria.js"></script>
+  <script src="js/screens/reportes.js"></script>
+  <script src="js/excel.js"></script>
+  <script src="js/screens/ajustes.js"></script>
+  <script>Admin.arrancar();</script>
+  <script src="js/tour.js"></script>
+  <script>Tour.alCargar();</script>
+</body>
+</html>
